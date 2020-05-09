@@ -15,7 +15,7 @@ The OWF InfoMapper is under development and is being tested internally at OWF on
 The OWF InfoMapper is designed to provide the following functionality:
 
 1. Provide a core application that displays configurable menus.
-2. Menus are linked to configurable maps.
+2. Menus are linked to configurable maps, content pages, external sites, and other content.
 3. Maps support events to display other data, such as popups, content pages, links to external websites,
 and time series visualizations.
 4. Integrates with other OWF tools including GeoProcessor and TSTool.
@@ -28,16 +28,16 @@ cloud services.
 The repository contains the following:
 
 ```text
-.github/              Files specific to GitHub such as issue template.
-.gitattributes        Typical Git configuration file for repository attributes.
-.gitignore            Typical Git configuration file for ignored file list.
-README.md             This file.
-build-util/           Useful scripts to view, build, and deploy documentation.
-mkdocs-project/       Typical MkDocs project for this documentation.
-  mkdocs.yml          MkDocs configuration file for website.
-  docs/               Folder containing source Markdown and other files for website.
-  site/               Folder created by MkDocs containing the static website - ignored using .gitignore.
-
+owf-app-info-mapper-ng-doc-user/  Repository folder.
+  .github/                        Files specific to GitHub such as issue template.
+  .gitattributes                  Typical Git configuration file for repository attributes.
+  .gitignore                      Typical Git configuration file for ignored file list.
+  README.md                       This file.
+  build-util/                     Useful scripts to view, build, and deploy documentation.
+  mkdocs-project/                 Typical MkDocs project for this documentation.
+    mkdocs.yml                    MkDocs configuration file for website.
+    docs/                         Folder containing source Markdown and other files for website.
+    site/                         Folder created by MkDocs containing the static website - ignored using .gitignore.
 ```
 
 ## Development Environment ##
