@@ -2,10 +2,15 @@
 
 The following are useful resources, in alphabetical order.
 
+* [InfoMapper](#infomapper) - open source software to publish information on the web
 * [GeoProcessor](#geoprocessor) - open source software to automate spatial data processing
 * [TSTool](#tstool) - open source software to automate time series processing
 
 ------------
+
+## InfoMapper ##
+
+* [Repository](https://github.com/OpenWaterFoundation/owf-app-info-mapper-ng)
 
 ## GeoProcessor ##
 
