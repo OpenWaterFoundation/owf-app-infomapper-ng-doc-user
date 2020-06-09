@@ -25,7 +25,8 @@ in particular when data and information are updated on a schedule or an applicat
 is scaled to multiple implementations.
 Existing publishing tools may rely too much on interactive editing and configuration.
 
-* There is a need for basic web applications without requiring programming skills.
+* There is a need for web applications that can provide advanced configurable features
+without requiring programming skills.
 
 * There is often a need to share and version control workflows.
 The InfoMapper integrates with information products produced by version-controlled workflows.
@@ -40,6 +41,8 @@ The InfoMapper and other OWF software products such as GeoProcessor are intended
 for entities that do not have funding for software licenses.
 There is a cost to learn and implement software, and those costs vary depending on skill and application complexity.
 However, much of the effort is spent understanding data and workflows.
+The InfoMapper and other OWF tools also work with commercial software,
+for organizations that use commercial software.
 
 * There is a need for tools that can visualize spatial data without extensive GIS skills.
 The InfoMapper is designed to publish data using general terminology.
@@ -65,12 +68,11 @@ The following summarizes UI features:
 
 * The InfoMapper is a "single page website" meaning that all functionality is accessed from a single page.
 	+ The application behaves similarly to a desktop application.
-	+ Popup windows may show temporary content.
+	+ Popup windows show content and are then closed.
 	+ Additional tabs may be used for some content but the main features are contained to one web page.
 * The application title is shown on the left side of the menu bar.
-Additional features will be added in the future to brand an application.
 * Horizontal menus at the top list main areas of information.
-	+ Each menu has items that can be selected to display maps, content pages, visualizations,
+	+ Each main menu has menu items that can be configured to display maps, narrative content pages, visualizations,
 	or other content.
 
 ## Concepts ##
@@ -80,14 +82,15 @@ The following are concepts that are used throughout the InfoMapper and this docu
 ### Map Configurations ###
 
 The InfoMapper relies heavily on map configurations to describe map products.
-Typical GIS map configurations, such as those used with QGIS and ArcGIS are complicated,
+Typical GIS software map configurations, such as those used with QGIS and ArcGIS, are complicated,
 files may be very large, and can be difficult to automate.
 The InfoMapper uses [GeoMapProject](http://software.openwaterfoundation.org/geoprocessor/latest/doc-user/appendix-geomapproject/geomapproject/)
 files created by OWF GeoProcessor software to describe maps.
 These map configurations are JSON files that describe project type,
 map, layers, groups of layers, and symbols for layers.
-Map configurations are typically created with automated workflows, which allows them to be updated and modified.
-Supporting data such as map layers time series,
+Map configurations are typically created with automated workflows,
+which allows map configurations to be updated and modified.
+Supporting data such as time series associated with map layers
 and data tables are also processed with an automated workflow.
 
 The InfoMapper implements software features using open source Leaflet and other tools to display maps and provide
@@ -97,21 +100,20 @@ interaction features (see next [Events](#events) section).
 
 The GeoMapProject configurations contain information to describe
 [map events](http://software.openwaterfoundation.org/geoprocessor/latest/doc-user/appendix-geomapproject/geomapproject/#geolayervieweventhandler),
-which are user interactionis.
+which are user interactions.
 For example, mousing over a layer feature may display a popup with information.
 Clicking on a feature may provide more detailed data and links to other information.
 
 The InfoMapper provides general features to handle such events.
 Although more complex event actions may be implemented over time,
-it is not envisioned that the InfoMapper will provide advanced features to build complex applications.
-In this case, it may be necessary to write a custom application or find an alternate solution.
+the focus of the InfoMapper is to provide predictable behavior and intuitive interfaces.
 
 ## Alternatives to the InfoMapper ##
 
 Alternatives to the InfoMapper should be considered where the InfoMapper does not satisfy requirements.
 The goal of the InfoMapper is to provide a cost-effective way to publish information products using open data formats.
 
-Commercial solutions include:
+Commercial solutions include, for example:
 
 * [Esri ArcGIS Online](https://www.arcgis.com/)
 * [Tableau](https://www.tableau.com/)
