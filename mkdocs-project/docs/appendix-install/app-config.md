@@ -22,6 +22,7 @@ The following is an example of an `app-config.json` configuration file:
   "title": "Poudre Basin Information",
   "homePage": "/content-pages/home.md",
   "version": "0.2.0.dev (2020-05-05)",
+  "favicon": "/img/owf-logo-favicon-32x32.ico",
   "mainMenu": [
     {
       "id": "BasinEntities",
@@ -32,13 +33,14 @@ The following is an example of an `app-config.json` configuration file:
           "id" : "water-districts",
           "name": "Division 1 Water Districts",
           "action": "displayMap",
-          "mapProject" : "/data-maps/BasinEntities/WaterDistricts/div1-water-districts.json"
+          "mapProject" : "data-maps/BasinEntities/WaterDistricts/div1-water-districts.json"
         },
         {
           "id" : "ditches",
           "name":  "Agriculture - Ditches",
           "action": "displayMap",
-          "mapProject" : "/data-maps/BasinEntities/Agriculture-Ditches/ditches.json"
+          "enabled": false,
+          "mapProject" : "data-maps/BasinEntities/Agriculture-Ditches/ditches.json"
         }
       ]
     },
@@ -66,6 +68,7 @@ Top-level application properties are described in the following table.
 | `title`<br>**required** | string | Title for the application, shown on the left side of the menu bar and is also used as the web page title shown in web browser tabs. | None - must be specified. |
 | `homePage` | file path | Path to the home page, which is shown when the application starts.  This is typically `/content-pages/home.md`.  Markdown will be converted to html.  See the [Path Specification](#path-specification) section. | Blank page. |
 | `version`<br>**required** | string |  Version of the application configuration in format `0.2.0.dev (2020-05-05)`.  This is **not** the InfoMapper software version.  | None - must be specified. |
+| `favicon` | file path | Path to a favicon image file to use for website, which is shown in the browser tab. | Open Water Foundation favicon. |
 | `mainMenu`<br>**required** | array | Main menu definition - see the next section. | None - must be specified. |
 | ========== | ========= | Proposed properties | ============= |
 | `googlenAnalytics`<br>`TrackingId` | string | Google Analytics tracking identifier. | Analytics are not used. |
