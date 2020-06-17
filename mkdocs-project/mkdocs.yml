@@ -7,6 +7,7 @@ nav:
 - Home: index.md
 - Introduction: introduction/introduction.md
 - Getting Started: getting-started/getting-started.md
+- InfoMapper Features: features/features.md
 - Resources: resources/resources.md
 - Troubleshooting: troubleshooting/troubleshooting.md
 - Appendix - Install and Config:
