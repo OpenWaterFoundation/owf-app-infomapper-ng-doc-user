@@ -6,6 +6,7 @@ This documentation describes how to install and configure the InfoMapper.
 * [Configure InfoMapper](#configure-infomapper)
 	+ [`app-config.json`](#app-configjson)
 	+ [Map Configuration Files](#map-configuration-files)
+	+ [Map Event Configuration Files](#map-event-configuration-files)
 
 ----------------------
 
@@ -44,3 +45,10 @@ This ensures that the JSON map configuration files are properly formatted.
 For example, see:
 
 * [InfoMapper test data GeoProcessor command files](https://github.com/OpenWaterFoundation/owf-app-info-mapper-ng/tree/master/data-prep)
+
+### Map Event Configuration Files ###
+
+Map event configuration files are used to configure actions that occur
+when interacting with maps, such as clicking on a map feature to display a graph.
+
+* See the [Map Event Configuration Files](map-event-config-files.md) specification.
