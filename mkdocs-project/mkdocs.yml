@@ -13,6 +13,7 @@ nav:
 - Appendix - Install and Config:
   - Overview: appendix-install/overview.md
   - app-config.json: appendix-install/app-config.md
+  - Map Event Configuration Files: appendix-install/map-event-config-files.md
 - Appendix - Release Notes:
   - Release Notes: appendix-release-notes/release-notes.md
   - Version 0: appendix-release-notes/release-notes-0.md
