@@ -88,11 +88,11 @@ Either the `menus` or `action` property should be specified.
 | `name`<br>**required** | string | The text displayed for the menu. | None - must be specified. |
 | `align` | string | The menu alignment:  `left` or ?. | Required? |
 | `enabled` | boolean | Whether or not the menu is enabled, `false` or `true`. Disabled menus will be shown in grey and will not respond to user actions. | `true` |
+| `action` | string | Indicates that selecting the main menu item will cause an action:<ul><li>`contentPage` - display a content page.  Specify the name of the content file using the `markdownFile` property.</li></ul> | |
 | =========== | ====== | Properties for sub-menus. | ============ |
 | `menus` | array | Array of sub-menus. See the next section. | |
-| =========== | ====== | Properties for action. | ============ |
-| `action` | string | Indicates that selecting the main menu item will cause an action:<ul><li>`contentPage` - display a content page.  Specify the name of the content file using the `markdownFile` property.</li></ul> | |
-| `markdownFile` | file path | Used with `action` that is a `contentPage`.  Name of the Markdown file to display on a content page.  See [Path Specification](#path-specification) section. | |
+| =========== | ====== | Properties for `action=contentPage`. | ============ |
+| `markdownFile` | file path | Used with `action` that is a `contentPage`.  Path to a Markdown file to display on a content page.  See [Path Specification](#path-specification) section. | |
 
 ## Menu Properties ##
 
@@ -103,15 +103,17 @@ Define each menu as an item in the `menus` array (see previous section).
 `app-config.json` Sub-menu Properties
 </p>**
 
-| **Property** | **Type** | **Description** | **Default** |
+| **Property**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Type** | **Description** | **Default** |
 | -- | -- | -- | -- |
 | `name`<br>**required** | string | The text displayed for the menu item. | None - must be specified. |
 | `enabled` | boolean | Whether or not the menu is enabled, `false` or `true`. Disabled menus will be shown in grey and will not respond to user actions. | `true` |
-| `action`<br>**required** | string | The action to take when the menu item is clicked.<ul><li>`externalLink` - link to another web page</li><li>`mapProject` - display a map</li></ul><br>See below for properties based on the action. | None - must be specified. |
+| `action`<br>**required** | string | The action to take when the menu item is clicked.<ul><li>`contentPage` - display a content page containing text, images, links, etc, using an internal HTML viewer</li><li>`externalLink` - link to another web page</li><li>`mapProject` - display a map</li></ul><br>See below for properties based on the action. | None - must be specified. |
+| =========== | ====== | Properties if `action=contentPage`. | ============ |
+| `markdownFile` | file path | Used with `action` that is a `contentPage`.  Path to a Markdown file to display on a content page.  See [Path Specification](#path-specification) section. | |
 | =========== | ====== | Properties if `action=externalLink`. | ============ |
-| `url` | string | URL of page to link to.  A new web browser tab will be opened so that the current state of the InfoMapper is not lost. | |
+| `url` | URL | URL of page to link to.  A new web browser tab will be opened so that the current state of the InfoMapper is not lost.  See [Path Specification](#path-specification) section.| |
 | =========== | ====== | Properties if `action=mapProject`. | ============ |
-| `mapProject` | file path | Name of the [GeoMapProject JSON file](http://software.openwaterfoundation.org/geoprocessor/latest/doc-user/appendix-geomapproject/geomapproject/) to display.  Currently, only GeoMapProject with `projectType=SingleMap` (one map in the project) is supported.  See the [Path Specification](#path-specification) section. | |
+| `mapProject` | file path | Path to a [GeoMapProject JSON file](http://software.openwaterfoundation.org/geoprocessor/latest/doc-user/appendix-geomapproject/geomapproject/) to display.  Currently, only GeoMapProject with `projectType=SingleMap` (one map in the project) is supported.  See the [Path Specification](#path-specification) section. | |
 
 ## Path Specification ##
 
