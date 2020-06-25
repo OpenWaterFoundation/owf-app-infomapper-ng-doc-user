@@ -9,7 +9,7 @@ Other configuration files are provided for maps.
 * [Main Menu Properties](#main-menu-properties)
 * [Menu Properties](#menu-properties)
 * [Path Specification](#path-specification)
-* [URL Mapping](#url-mapping)
+* [InfoMapper Application URL Mapping](#infomapper-application-url-mapping)
 
 ----
 
@@ -84,7 +84,7 @@ Either the `menus` or `action` property should be specified.
 
 | **Property**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Type** | **Description** | **Default** |
 | -- | -- | -- | -- |
-| `id`<br>**required** | string | Internal identifier for the main menu, will be used in the URL.  See the [URL Mapping](#url-mapping) section. | None - must be specified. |
+| `id`<br>**required** | string | Internal identifier for the main menu, will be used in the URL.  See the [InfoMapper Application URL Mapping](#infomapper-application-url-mapping) section. | None - must be specified. |
 | `name`<br>**required** | string | The text displayed for the menu. | None - must be specified. |
 | `align` | string | The menu alignment:  `left` or ?. | Required? |
 | `enabled` | boolean | Whether or not the menu is enabled, `false` or `true`. Disabled menus will be shown in grey and will not respond to user actions. | `true` |
@@ -128,9 +128,24 @@ Each configuration property that is a file path adheres to the following behavio
 * each file path encountered in a configuration file supports the following:
 	+ `filename` - full path will be the path to the **configuration file** appended with `/filename`
 	+ `/filename` - full path will be the path to the **application folder** appended with `/filename`
+	+ `URL` - URL to file using `http` or `https` protocol,
+	which allows retrieving the file from a remote server
+
+URLs are most often used when retrieving a data layer from a remote machine,
+perhaps with attributes that are updated on a regular frequency.
+It may be possible to provide the application configuration or other data files via URLs.
+Combinations of higher-level file path
+specified as a URL and lower-level file path specified as a non-URL may be supported in the future,
+in order to support a URL+relative path data model.
+Currently each URL must be specified with full path.
+The use of URLs in GeoMapProject configuration files must be coordinated with
+GeoProcessor command files that create map configuration files.
+
+### Path Example for Local Files ###
 
 For example, consider the following InfoMapper data files organization,
 where maps are organized consistent with InfoMapper menus:
+
 
 ```
 assets/
@@ -162,7 +177,11 @@ If in a map configuration file, the path to a default image for map marker
 
 The latter notation is typically only useful when traversing a small number of parent folders.
 
-## URL Mapping ##
+### Path Example for Remote Files ###
+
+Need to add an example with URLs to specify data file location.
+
+## InfoMapper Application URL Mapping ##
 
 The InfoMapper uses internal "routing" to map URLs shown in the browser with content shown in the application.
 The content defined in the application and map configuration files must be
@@ -173,7 +192,7 @@ The hash character (`#`) in the URL is an indicator to the InfoMapper that he fo
 part of the URL should be interpreted internally.
 
 **<p style="text-align: center;">
-InfoMapper URL Mapping
+InfoMapper Application URL Mapping
 </p>**
 
 | **InfoMapper URL**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Descripton** |
