@@ -10,16 +10,16 @@ An `eventType` of `click` is associated with modal popup that can be configured 
 that was clicked on, and optionally buttons that cause other actions such as displaying a graph.
 
 ```
-              "eventHandlers": [
-                {
-                  "eventType": "click",
-                  "name": null,
-                  "description": "",
-                  "properties": {
-                    "popupConfigPath": "graphs/diversion-popup-config.json"
-                  }
-                }
-              ]
+  "eventHandlers": [
+    {
+      "eventType": "click",
+      "name": null,
+      "description": "",
+      "properties": {
+        "popupConfigPath": "graphs/diversion-popup-config.json"
+      }
+    }
+  ]
 ```
 
 The popup configuration file specified by `popupConfigPath` property
@@ -42,24 +42,29 @@ clicked on and display buttons with each of the labels shown.
   },
   "actions": [
       {
-        "action" : "graph",
         "label" : "Demand",
-        "productPath" : "graphs/diversion-DiversionDemand-graph-config.json"
+        "action" : "displayTimeSeries",
+        "resourcePath" : "graphs/diversion-DiversionDemand-graph-config.json"
       },
       {
-        "action" : "graph",
         "label" : "Historical",
-        "productPath" : "graphs/diversion-DiversionHistorical-graph-config.json"
+        "action" : "displayTimeSeries",
+        "resourcePath" : "graphs/diversion-DiversionHistorical-graph-config.json"
       },
       {
-        "action" : "graph",
         "label" : "Available Flow",
-        "productPath" : "graphs/diversion-Available_Flow-graph-config.json"
+        "action" : "displayTimeSeries",
+        "resourcePath" : "graphs/diversion-Available_Flow-graph-config.json"
       },
       {
-        "action" : "graph",
         "label" : "Combination",
-        "productPath" : "graphs/diversion-combination-graph-config.json"
+        "action" : "displayTimeSeries",
+        "resourcePath" : "graphs/diversion-combination-graph-config.json"
+      },
+      {
+        "label" : "Diversion Summary",
+        "action" : "displayText",
+        "resourcePath" : "/data-ts/output/xdd/${featureAttribute:StateModStationId}.H2.xdd"
       }
   ]
 }
@@ -102,14 +107,14 @@ Popup Configuration File `layerAttributes` Properties
 | `formats` | An array of properties defining how to format attributes.  **Need to define.** | Use default string representation of attributes. |
 
 **<p style="text-align: center;">
-Popup Configuration File `actionss` Properties
+Popup Configuration File `actions` Properties
 </p>**
 
 | **Property**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default** |
 | -- | -- | -- |
-| `action`<br>**required**</br> | The action type, indicating what will happen with the popup button is pressed:<ul><li>`graph` (**Proposed:** change this to `displayGraph`) - display a graph specified by TSTool JSON graph configuration file</li><li>**Proposed:** `displayTextFile` - display a text file</li></ul>. | None - must be specified. |
-| **Proposed:** `chartPackage` | The chart package to use for graphs:<ul><li>`ChartJS`</li><li>`plotly`</li></ul> | `ChartJS` |
+| `action`<br>**required**</br> | The action type, indicating what will happen with the popup button is pressed:<ul><li>`displayTimeSeries` (previously was `graph`) - display a time series product specified by TSTool JSON graph configuration file</li><li>`displayText` - display a text file using a popup with fixed-format font</li></ul>. | None - must be specified. |
+| `chartPackage` | The chart package to use for graphs:<ul><li>`ChartJS`</li><li>`plotly`</li></ul> | `ChartJS` |
 | `label`<br>**required**</br> | The button label shown in the popup. | None - must be specified. |
 | **Proposed:** `modal` | Whether or not the popup window is modal: `false` or `true`. | `true` |
 | **Proposed:** `outputComponent` | Output destination:<ul><li>`Popup` - display as popup (see also `modal`)</li><li>**Proposed:** `Tab` - display in a new tab</li><li>**Proposed:** `Window` - display in a new Window</li></ul> | `Popup` |
-| `productPath`<br>**required**</br> | The path to a TSTool JSON graph configuration file for graph. | None - must be specified for `graph` action. |
+| `resourcePath`<br>**required**</br> | The path to the data resource:<ul><li>for `action=displayTimeSeries`, specify a TSTool JSON graph configuration file for time series product</li><li>for `action=displayText`, specify the path to a text file to display</li></ul><br>The `productPath` property that was previously used  with time series graphs has been deprecated. | None - must be specified. |
