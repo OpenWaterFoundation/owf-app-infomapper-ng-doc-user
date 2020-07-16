@@ -1,13 +1,43 @@
 # Map Event Configuration Files #
 
+* [Introduction](#introduction)
+* [Hover Event](#hover-event)
+* [Click Event](#click-event)
+* [Configuration](#configuration)
+
+--------------------
+
+## Introduction ##
+
 A map configuration file created by GeoProcessor software
 can contain an event handler section for GeoLayerView,
-with event handler configuration similar to the following.
-The event handler is added to a GeoMapProject using the GeoView
+with event handler configuration as discussed below.
+This allows interaction with map layers,
+such as hovering over features or clicking on features in order to view additional information.
+
+One or more event handlers can be added to a GeoMapProject using the GeoView
 [`SetGeoLayerViewEventHandler`](http://software.openwaterfoundation.org/geoprocessor/latest/doc-user/command-ref/SetGeoLayerViewEventHandler/SetGeoLayerViewEventHandler/) command.
-An `eventType` of `hover` is associated with transient popup that shows attributes for the layer feature over which hovering occurs.
-An `eventType` of `click` is associated with modal popup that can be configured to show attributes for the layer feature
-that was clicked on, and optionally buttons that cause other actions such as displaying a graph.
+Default event handlers are often sufficient for many layers, especially when additional interaction is not needed.
+
+## Hover Event ##
+
+An `eventType` of `hover` will cause a transient popup to display,
+which shows attributes for the layer feature over which hovering occurs.
+The hover event type is enabled by default and displays the attributes for the feature under the hover device, typically a mouse.
+The following illustrates a hover popup.
+
+**<p style="text-align: center;">
+![hover-popup](images/hover-popup.png)
+</p>**
+
+**<p style="text-align: center;">
+Example Popup for Hover Event (<a href="../images/hover-popup.png">see full-size image</a>)
+</p>**
+
+## Click Event ##
+
+An `eventType` of `click` is associated with popup that can be configured to show attributes for the layer feature
+that was clicked on (the default), and optionally show buttons that when clicked on will cause other actions such as displaying a graph.
 
 ```
   "eventHandlers": [
@@ -28,7 +58,7 @@ Currently, the GeoProcessor does not provide a command to create a popup configu
 and therefore it must be created with a text editor.
 The following is an example of a popup configuration file.
 In this case the popup will list all attributes for the feature that has been
-clicked on and display buttons with each of the labels shown.
+clicked on and will display buttons that trigger actions.
 
 ```
 {
@@ -70,7 +100,7 @@ clicked on and display buttons with each of the labels shown.
 }
 ```
 
-For example the popup will display similar to the following:
+For example, the popup will display similar to the following:
 
 **<p style="text-align: center;">
 ![click-popup](images/click-popup.png)
@@ -79,6 +109,8 @@ For example the popup will display similar to the following:
 **<p style="text-align: center;">
 Example Popup for Click Event (<a href="../images/click-popup.png">see full-size image</a>)
 </p>**
+
+### Configuration File Properties ###
 
 The main properties of a popup configuration file are described in the following table.
 
@@ -113,7 +145,7 @@ Popup Configuration File `actions` Properties
 | **Property**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default** |
 | -- | -- | -- |
 | `action`<br>**required**</br> | The action type, indicating what will happen with the popup button is pressed:<ul><li>`displayTimeSeries` (previously was `graph`) - display a time series product specified by TSTool JSON graph configuration file</li><li>`displayText` - display a text file using a popup with fixed-format font</li></ul>. | None - must be specified. |
-| `chartPackage` | The chart package to use for graphs:<ul><li>`ChartJS`</li><li>`plotly`</li></ul> | `ChartJS` |
+| `chartPackage` | The chart package to use for graphs:<ul><li>`ChartJS`</li><li>`plotly`</li></ul> | `plotly` |
 | `label`<br>**required**</br> | The button label shown in the popup. | None - must be specified. |
 | **Proposed:** `modal` | Whether or not the popup window is modal: `false` or `true`. | `true` |
 | **Proposed:** `outputComponent` | Output destination:<ul><li>`Popup` - display as popup (see also `modal`)</li><li>**Proposed:** `Tab` - display in a new tab</li><li>**Proposed:** `Window` - display in a new Window</li></ul> | `Popup` |
