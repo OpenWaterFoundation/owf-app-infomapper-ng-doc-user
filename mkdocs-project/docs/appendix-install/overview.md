@@ -13,7 +13,7 @@ This documentation describes how to install and configure the InfoMapper.
 ## Install InfoMapper ##
 
 Currently, installation of the InfoMapper requires cloning the GitHub repository.
-See the [owf-app-info-mapper-ng](https://github.com/OpenWaterFoundation/owf-app-info-mapper-ng)
+See the [owf-app-infomapper-ng](https://github.com/OpenWaterFoundation/owf-app-infomapper-ng)
 repository README for instructions.
 
 The InfoMapper is typically installed parallel to a "workflow" repository that
@@ -44,7 +44,7 @@ Map configuration files are created by the GeoProcessor software.
 This ensures that the JSON map configuration files are properly formatted.
 For example, see:
 
-* [InfoMapper test data GeoProcessor command files](https://github.com/OpenWaterFoundation/owf-app-info-mapper-ng/tree/master/data-prep)
+* [InfoMapper test data GeoProcessor command files](https://github.com/OpenWaterFoundation/owf-app-infomapper-ng/tree/master/data-prep)
 
 ### Map Event Configuration Files ###
 

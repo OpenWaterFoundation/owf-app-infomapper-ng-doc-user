@@ -2,7 +2,7 @@
 
 **Release notes are not currently being kept up to date due to development being
 internally-focused.  See the
-[owf-app-info-mapper-ng repository issues](https://github.com/OpenWaterFoundation/owf-app-info-mapper-ng/issues).**
+[owf-app-infomapper-ng repository issues](https://github.com/OpenWaterFoundation/owf-app-infomapper-ng/issues).**
 
 * [Changes in Version 0.7.0](#changes-in-version-0-7-0)
 

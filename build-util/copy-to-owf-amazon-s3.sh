@@ -58,8 +58,8 @@ checkSourceDocs
 scriptFolder=$(cd $(dirname "$0") && pwd)
 repoFolder=$(dirname ${scriptFolder})
 gitReposFolder=$(dirname ${repoFolder})
-infoMapperRepoFolder="${gitReposFolder}/owf-app-info-mapper-ng"
-infoMapperMainFolder="${infoMapperRepoFolder}/info-mapper"
+infoMapperRepoFolder="${gitReposFolder}/owf-app-infomapper-ng"
+infoMapperMainFolder="${infoMapperRepoFolder}/infomapper"
 infoMapperAssetsFolder="${infoMapperMainFolder}/src/assets"
 
 echo "Script folder = ${scriptFolder}"
