@@ -12,6 +12,6 @@ The following topics are useful for troubleshooting software issues:
 ## Repository Issue Tracking ##
 
 An issue may be due to a software bug or planned enhancement.
-See the [InfoMapper GitHub repository issues](https://github.com/OpenWaterFoundation/owf-app-info-mapper-ng/issues)
+See the [InfoMapper GitHub repository issues](https://github.com/OpenWaterFoundation/owf-app-infomapper-ng/issues)
 for a list of know issues.
 New bugs and feature requests can be added to alert developers.

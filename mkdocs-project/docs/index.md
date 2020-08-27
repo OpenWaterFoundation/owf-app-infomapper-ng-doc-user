@@ -47,13 +47,13 @@ that can be used by the InfoMapper.
 See the following projects that are implementing this approach.
 
 **<p style="text-align: center;">
-Projects with Workflows for InfoMapper
+InfoMapper Projects
 </p>**
 
 | **Published Project**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Status** | **Description and Project Repository** |
 | -- | -- | -- |
-| [Poudre Basin Information](http://poudre.openwaterfoundation.org/latest/) | Under development | Information portal for Poudre River Basin in Colorado, intended to support the work of the [Poudre Runs Through It Study/Action Work Group](https://watercenter.colostate.edu/prti/), decision-makers, and serve as an information resource for the public.<br><br>Repository:  [owf-app-poudre-dashboard-workflow](https://github.com/OpenWaterFoundation/owf-app-poudre-dashboard-workflow) |
-| [Upper Colorado Water Allocation Model](http://opencdss.openwaterfoundation.org/datasets/colorado/2015/) | Under development | Web application to publish the State of Colorado's StateMod water allocation model dataset.  It is envisioned that this will provide a way to publish StateMod datsets so that they are more accessible by interested parties.<br><br>Repository:  [cdss-app-statemod-web](https://github.com/OpenWaterFoundation/cdss-app-statemod-web) - **will be private until it reaches a critical mass of functionality** |
+| [Poudre Basin Information](http://poudre.openwaterfoundation.org/latest/) | Under development | Information portal for Poudre River Basin in Colorado, intended to support the work of the [Poudre Runs Through It Study/Action Work Group](https://watercenter.colostate.edu/prti/), decision-makers, and serve as an information resource for the public.<br><br>Repository:  [owf-infomapper-poudre](https://github.com/OpenWaterFoundation/owf-infomapper-poudre) |
+| [Upper Colorado Water Allocation Model](http://opencdss.openwaterfoundation.org/datasets/colorado/2015/) | Under development | Web application to publish the State of Colorado's StateMod water allocation model dataset.  It is envisioned that this will provide a way to publish StateMod datsets so that they are more accessible by interested parties.<br><br>Repository:  [cdss-app-statemod-web](https://github.com/OpenWaterFoundation/cdss-app-statemod-web) |
 
 ### InfoMapper Developers and Users ###
 
@@ -93,7 +93,7 @@ Use the search feature to find documentation matching the search words.
 The InfoMapper software must currently be installed by cloning the following GitHub repository.
 An installer will be added in the future.
 
-* [owf-app-info-mapper-ng](https://github.com/OpenWaterFoundation/owf-app-info-mapper-ng) - GitHub repository
+* [owf-app-infomapper-ng](https://github.com/OpenWaterFoundation/owf-app-infomapper-ng) - GitHub repository
 
 ## License ##
 
@@ -105,4 +105,4 @@ The OWF InfoMapper documentation is licensed under the
 ## Source Repository on GitHub ##
 
 The source files for this documentation are maintained in a GitHub repository:
-[owf-app-info-mapper-ng-doc-user](https://github.com/OpenWaterFoundation/owf-app-info-mapper-ng-doc-user).
+[owf-app-infomapper-ng-doc-user](https://github.com/OpenWaterFoundation/owf-app-infomapper-ng-doc-user).

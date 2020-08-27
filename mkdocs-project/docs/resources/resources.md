@@ -10,7 +10,7 @@ The following are useful resources, in alphabetical order.
 
 ## InfoMapper ##
 
-* [Repository](https://github.com/OpenWaterFoundation/owf-app-info-mapper-ng)
+* [Repository](https://github.com/OpenWaterFoundation/owf-app-infomapper-ng)
 
 ## GeoProcessor ##
 
