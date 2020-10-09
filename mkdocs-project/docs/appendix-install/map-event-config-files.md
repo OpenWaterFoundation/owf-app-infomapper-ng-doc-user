@@ -74,22 +74,26 @@ clicked on and will display buttons that trigger actions.
       {
         "label" : "Demand",
         "action" : "displayTimeSeries",
-        "resourcePath" : "graphs/diversion-DiversionDemand-graph-config.json"
+        "resourcePath" : "graphs/diversion-DiversionDemand-graph-config.json",
+        "downloadFile" : "${featureAttribute:StateModStationId}-DiversionDemand.csv"
       },
       {
         "label" : "Historical",
         "action" : "displayTimeSeries",
-        "resourcePath" : "graphs/diversion-DiversionHistorical-graph-config.json"
+        "resourcePath" : "graphs/diversion-DiversionHistorical-graph-config.json",
+        "downloadFile" : "${featureAttribute:StateModStationId}-DiversionHistorical.csv"
       },
       {
         "label" : "Available Flow",
         "action" : "displayTimeSeries",
-        "resourcePath" : "graphs/diversion-Available_Flow-graph-config.json"
+        "resourcePath" : "graphs/diversion-Available_Flow-graph-config.json",
+        "downloadFile" : "${featureAttribute:StateModStationId}-Available_Flow.csv"
       },
       {
         "label" : "Combination",
         "action" : "displayTimeSeries",
-        "resourcePath" : "graphs/diversion-combination-graph-config.json"
+        "resourcePath" : "graphs/diversion-combination-graph-config.json",
+        "downloadFile" : "${featureAttribute:StateModStationId}-combination.csv"
       },
       {
         "label" : "Diversion Summary",
@@ -142,11 +146,13 @@ Popup Configuration File `layerAttributes` Properties
 Popup Configuration File `actions` Properties
 </p>**
 
-| **Property**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default** |
+| **Property**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | -- | -- | -- |
 | `action`<br>**required**</br> | The action type, indicating what will happen with the popup button is pressed:<ul><li>`displayTimeSeries` (previously was `graph`) - display a time series product specified by TSTool JSON graph configuration file</li><li>`displayText` - display a text file using a popup with fixed-format font</li></ul>. | None - must be specified. |
 | `chartPackage` | The chart package to use for graphs:<ul><li>`ChartJS`</li><li>`plotly`</li></ul> | `plotly` |
+| `downloadPath` | The name of the file to be used when downloading data used in a visualization popup. | <ul><li>`timeseries.csv` - for time series</li></ul> | 
 | `label`<br>**required**</br> | The button label shown in the popup. | None - must be specified. |
+| `resourcePath`<br>**required**</br> | The path to the data resource:<ul><li>for `action=displayTimeSeries`, specify a TSTool JSON graph configuration file for time series product</li><li>for `action=displayText`, specify the path to a text file to display</li></ul><br>The `productPath` property that was previously used  with time series graphs has been deprecated. | None - must be specified. |
+| ---------------------| ---------------- | ---------- |
 | **Proposed:** `modal` | Whether or not the popup window is modal: `false` or `true`. | `true` |
 | **Proposed:** `outputComponent` | Output destination:<ul><li>`Popup` - display as popup (see also `modal`)</li><li>**Proposed:** `Tab` - display in a new tab</li><li>**Proposed:** `Window` - display in a new Window</li></ul> | `Popup` |
-| `resourcePath`<br>**required**</br> | The path to the data resource:<ul><li>for `action=displayTimeSeries`, specify a TSTool JSON graph configuration file for time series product</li><li>for `action=displayText`, specify the path to a text file to display</li></ul><br>The `productPath` property that was previously used  with time series graphs has been deprecated. | None - must be specified. |
