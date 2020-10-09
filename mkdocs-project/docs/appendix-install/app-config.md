@@ -6,8 +6,8 @@ Other configuration files are provided for maps.
 
 * [Introduction](#introduction)
 * [Application Properties](#application-properties)
-* [Main Menu Properties](#main-menu-properties)
-* [Menu Properties](#menu-properties)
+* [Main Menu Properties](#main-menu-mainmenu-properties)
+* [Menu Properties](#menu-menu-properties)
 * [Path Specification](#path-specification)
 * [InfoMapper Application URL Mapping](#infomapper-application-url-mapping)
 
@@ -20,9 +20,11 @@ The following is an example of an `app-config.json` configuration file:
 ```
 {
   "title": "Poudre Basin Information",
+  "dataUnitsPath": "/system/DATAUNIT",
+  "favicon": "/img/owf-logo-favicon-32x32.ico",
+  "googleAnalyticsTrackingId": "UA-123456789-1",
   "homePage": "/content-pages/home.md",
   "version": "0.2.0.dev (2020-05-05)",
-  "favicon": "/img/owf-logo-favicon-32x32.ico",
   "mainMenu": [
     {
       "id": "BasinEntities",
@@ -65,49 +67,52 @@ Top-level application properties are described in the following table.
 
 | **Property**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Type** | **Description** | **Default** |
 | -- | -- | -- | -- |
-| `title`<br>**required** | string | Title for the application, shown on the left side of the menu bar and is also used as the web page title shown in web browser tabs. | None - must be specified. |
-| `homePage` | file path | Path to the home page, which is shown when the application starts.  This is typically `/content-pages/home.md`.  Markdown will be converted to html.  See the [Path Specification](#path-specification) section. | Blank page. |
-| `version`<br>**required** | string |  Version of the application configuration in format `0.2.0.dev (2020-05-05)`.  This is **not** the InfoMapper software version.  | None - must be specified. |
+| `dataUnitsPath` | file path | Path to the data units file, which is used to specify output precision for units, and factors to allow converting between units.  The format of the data units file is the same as TSTool and the TSTool `system/DATAUNIT` file can be used. | Default output precision will be used and units conversion is not allowed. |
 | `favicon` | file path | Path to a favicon image file to use for website, which is shown in the browser tab. | Open Water Foundation favicon. |
+| `googleAnalytics`<br>`TrackingId` | string | The Google Analytics tracking identifier, to enable tracking web page traffic. | No analytics. |
+| `homePage` | file path | Path to the home page, which is shown when the application starts.  This is typically `/content-pages/home.md`.  Markdown will be converted to html.  See the [Path Specification](#path-specification) section. | Blank page. |
 | `mainMenu`<br>**required** | array | Main menu definition - see the next section. | None - must be specified. |
+| `title`<br>**required** | string | Title for the application, shown on the left side of the menu bar and is also used as the web page title shown in web browser tabs. | None - must be specified. |
+| `version`<br>**required** | string |  Version of the application configuration in format `0.2.0.dev (2020-05-05)`.  This is **not** the InfoMapper software version.  | None - must be specified. |
 | ========== | ========= | Proposed properties | ============= |
 | `googlenAnalytics`<br>`TrackingId` | string | Google Analytics tracking identifier. | Analytics are not used. |
 
-## Main Menu Properties ##
+## Main Menu (`mainMenu`) Properties ##
 
 The top-level `mainMenu` element has the following properties.
 Either the `menus` or `action` property should be specified.
 
 **<p style="text-align: center;">
-`app-config.json` Main Menu Properties
+`app-config.json` Main Menu (`mainMenu`) Properties
 </p>**
 
 | **Property**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Type** | **Description** | **Default** |
 | -- | -- | -- | -- |
 | `id`<br>**required** | string | Internal identifier for the main menu, will be used in the URL.  See the [InfoMapper Application URL Mapping](#infomapper-application-url-mapping) section. | None - must be specified. |
 | `name`<br>**required** | string | The text displayed for the menu. | None - must be specified. |
+| `action` | string | Indicates that selecting the main menu item will cause an action:<ul><li>`contentPage` - display a content page.  Specify the name of the content file using the `markdownFile` property.</li></ul> | |
 | `align` | string | The menu alignment:  `left` or ?. | Required? |
 | `enabled` | boolean | Whether or not the menu is enabled, `false` or `true`. Disabled menus will be shown in grey and will not respond to user actions. | `true` |
-| `action` | string | Indicates that selecting the main menu item will cause an action:<ul><li>`contentPage` - display a content page.  Specify the name of the content file using the `markdownFile` property.</li></ul> | |
 | =========== | ====== | Properties for sub-menus. | ============ |
-| `menus` | array | Array of sub-menus. See the next section. | |
+| `menus` | array | Array of menus. See the next section. | |
 | =========== | ====== | Properties for `action=contentPage`. | ============ |
 | `markdownFile` | file path | Used with `action` that is a `contentPage`.  Path to a Markdown file to display on a content page.  See [Path Specification](#path-specification) section. | |
 
-## Menu Properties ##
+## Menu (`menu`) Properties ##
 
 Menu properties define actions that will occur when a menu item is selected.
 Define each menu as an item in the `menus` array (see previous section).
 
 **<p style="text-align: center;">
-`app-config.json` Sub-menu Properties
+`app-config.json` Menu (`menu`) Properties
 </p>**
 
 | **Property**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Type** | **Description** | **Default** |
 | -- | -- | -- | -- |
 | `name`<br>**required** | string | The text displayed for the menu item. | None - must be specified. |
-| `enabled` | boolean | Whether or not the menu is enabled, `false` or `true`. Disabled menus will be shown in grey and will not respond to user actions. | `true` |
 | `action`<br>**required** | string | The action to take when the menu item is clicked.<ul><li>`contentPage` - display a content page containing text, images, links, etc, using an internal HTML viewer</li><li>`externalLink` - link to another web page</li><li>`mapProject` - display a map</li></ul><br>See below for properties based on the action. | None - must be specified. |
+| `enabled` | boolean | Whether or not the menu is enabled, `false` or `true`. Disabled menus will be shown in grey and will not respond to user actions. | `true` |
+| `separatorBefore` | boolean | Whether or not a separator line should be drawn above the menu item to group menu items, `false` or `true`. | `false` |
 | =========== | ====== | Properties if `action=contentPage`. | ============ |
 | `markdownFile` | file path | Used with `action` that is a `contentPage`.  Path to a Markdown file to display on a content page.  See [Path Specification](#path-specification) section. | |
 | =========== | ====== | Properties if `action=externalLink`. | ============ |
