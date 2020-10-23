@@ -210,7 +210,7 @@ Event Configuration File `actions` Properties
 | `downloadPath` | The name of the file to be used when downloading data used in a visualization popup.  Can use `${property}` notation and [property modifiers](app-config.md#property-modifiers). | <ul><li>`timeseries.csv` - for time series</li></ul> | 
 | `label`<br>**required**</br> | The button label shown in the popup. | None - must be specified. |
 | `productPath` | Deprecated - use `resourcePath`. | | 
-| `resourcePath`<br>**required**</br> | The path to the data resource:<ul><li>for `action=displayTimeSeries`, specify a [TSTool JSON time series product](time-series-config.md) (graph configuration) file for time series product</li><li>for `action=displayText`, specify the path to a text file to display</li></ul> | None - must be specified. |
+| `resourcePath`<br>**required**</br> | The path to the data resource:<ul><li>for `action=displayTimeSeries`, specify a [TSTool JSON time series product](time-series-config-file.md) (graph configuration) file for time series product</li><li>for `action=displayText`, specify the path to a text file to display</li></ul> | None - must be specified. |
 | `savePath` | Deprecated - use `downloadPath`. | | 
 | ---------------------| ---------------- | ---------- |
 | **Proposed:** `modal` | Whether or not the popup window is modal: `false` or `true`. | `true` |
