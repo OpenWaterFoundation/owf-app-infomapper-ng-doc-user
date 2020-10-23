@@ -9,6 +9,7 @@ Other configuration files are provided for maps.
 * [Main Menu Properties](#main-menu-mainmenu-properties)
 * [Menu Properties](#menu-menu-properties)
 * [Path Specification](#path-specification)
+* [Property Modifiers](#property-modifiers)
 * [InfoMapper Application URL Mapping](#infomapper-application-url-mapping)
 
 ----
@@ -187,6 +188,29 @@ The latter notation is typically only useful when traversing a small number of p
 ### Path Example for Remote Files ###
 
 Need to add an example with URLs to specify data file location.
+
+## Property Modifiers ##
+
+Properties may be recognized in configuration files using the `${property}` notation,
+which replaces the `${property}` string with the value of the matched property.
+In some cases "property modifiers" are also supported, which modify the property value.
+For example, modifiers may be needed to modify string properties to allow cross-referencing data,
+such as matching a layer attribute with database column or time series identifier.
+The following modifiers are available and can be chained using the following notation,
+in this example to convert a string like `RIO GRANDE` to `RioGrande`.
+
+```
+   ${property}.toMixedCase().replace(' ','')
+```
+
+**<p style="text-align: center;">
+Property Modifiers
+</p>**
+
+| **Modifier**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** |
+| -- | -- |
+| `replace('string1','string2')` | Replace the first string with the second. |
+| `toMixedCase()` | Convert a string to `Mixed Case`, where all characters are lowercase except for the upper case first character of each word.  Words are separated by whitespace. |
 
 ## InfoMapper Application URL Mapping ##
 
