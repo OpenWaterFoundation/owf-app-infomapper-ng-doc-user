@@ -5,8 +5,9 @@ This documentation describes how to install and configure the InfoMapper.
 * [Install InfoMapper](#install-infomapper)
 * [Configure InfoMapper](#configure-infomapper)
 	+ [`app-config.json`](#app-configjson)
-	+ [Map Configuration Files](#map-configuration-files)
-	+ [Map Event Configuration Files](#map-event-configuration-files)
+	+ [Map Configuration File](#map-configuration-file)
+	+ [Map Event Configuration File](#map-event-configuration-file)
+	+ [Time Series Configuration File](#time-series-configuration-file)
 
 ----------------------
 
@@ -38,17 +39,25 @@ such as menus, sub-menus, and associated website content.
 
 * See the [`app-config.json`](app-config.md) specification
 
-### Map Configuration Files ###
+### Map Configuration File ###
 
 Map configuration files are created by the GeoProcessor software.
 This ensures that the JSON map configuration files are properly formatted.
 For example, see:
 
+* [Poudre Basin Information GeoProcessor command files](https://github.com/OpenWaterFoundation/owf-infomapper-poudre/blob/master/workflow/BasinEntities/Political-Counties/03-create-counties-map.gp)
 * [InfoMapper test data GeoProcessor command files](https://github.com/OpenWaterFoundation/owf-app-infomapper-ng/tree/master/data-prep)
 
-### Map Event Configuration Files ###
+### Map Event Configuration File ###
 
 Map event configuration files are used to configure actions that occur
 when interacting with maps, such as clicking on a map feature to display a graph.
 
-* See the [Map Event Configuration Files](map-event-config-files.md) specification.
+* See the [Map Event Configuration File](map-event-config-file.md) specification.
+
+### Time Series Configuration File ###
+
+Time series configuration files are used to configure time series visualizations
+including graphs.
+
+* See the [Time Series Configuration File](time-series-config-file.md) specification.
