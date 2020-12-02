@@ -4,6 +4,7 @@
 * [Hover Event](#hover-event)
 * [Click Event](#click-event)
 * [Event Configuration File Properties](#event-configuration-file-properties)
+	+ [Raster Layer Event Configuration](#raster-layer-event-configuration)
 
 --------------------
 
@@ -171,7 +172,7 @@ For example, the popup will display similar to the following:
 Example Popup for Click Event (<a href="../images/click-popup.png">see full-size image</a>)
 </p>**
 
-### Event Configuration File Properties ###
+## Event Configuration File Properties ##
 
 The main properties of an event configuration file are described in the following table.
 
@@ -210,8 +211,50 @@ Event Configuration File `actions` Properties
 | `downloadPath` | The name of the file to be used when downloading data used in a visualization popup.  Can use `${property}` notation and [property modifiers](app-config.md#property-modifiers). | <ul><li>`timeseries.csv` - for time series</li></ul> | 
 | `label`<br>**required**</br> | The button label shown in the popup. | None - must be specified. |
 | `productPath` | Deprecated - use `resourcePath`. | | 
-| `resourcePath`<br>**required**</br> | The path to the data resource:<ul><li>for `action=displayTimeSeries`, specify a [TSTool JSON time series product](time-series-config-file.md) (graph configuration) file for time series product</li><li>for `action=displayText`, specify the path to a text file to display</li></ul> | None - must be specified. |
+| `resourcePath`<br>**required**</br> | The path to the data resource:<ul><li>for `action=displayTimeSeries`, specify a [TSTool JSON time series product](time-series-config-file.md) (graph configuration) file for time series product</li><li>for `action=displayText`, specify the path to a text file to display</li></ul> If the `resourcePath` is a relative path, it is relative to the map configuration file. | None - must be specified. |
 | `savePath` | Deprecated - use `downloadPath`. | | 
 | ---------------------| ---------------- | ---------- |
 | **Proposed:** `modal` | Whether or not the popup window is modal: `false` or `true`. | `true` |
 | **Proposed:** `outputComponent` | Output destination:<ul><li>`Popup` - display as popup (see also `modal`)</li><li>**Proposed:** `Tab` - display in a new tab</li><li>**Proposed:** `Window` - display in a new Window</li></ul> | `Popup` |
+
+### Raster Layer Event Configuration ###
+
+Raster layers include of one or more bands.
+Each band has a data type such as byte, integer, or float and each cell in the raster has a data value.
+Each raster band also has a "no data value" that indicates no data and cell values can be assigned to this value.
+The event configuration file for a raster layer with single band is shown below.
+The existence of the file indicates to InfoMapper that the raster cell value should be included in
+hover and/or click events, depending on which event types are enabled for the layer.
+
+```
+{
+  "id" : "cameron-peak-sbs-raster-event-config",
+  "name": "Hover and click event handlers for cameron-peak-sbs-raster",
+  "description":  "Display only important user-understandable attributes.",
+  "layerAttributes" : {
+    "include" : [ "*" ],
+    "exclude" : [],
+    "formats": []
+  },
+  "actions": [
+  ]
+}
+```
+
+One or more raster layers can be included in a map configuration and
+overlay an area where vector features also are included.
+It would be inconvenient to require that users must turn off overlying vector layers in order to interact with
+underlying raster layers.
+Consequently, the InfoMapper automatically displays raster layer cell values in
+hover and click popups for vector layers (see below).
+If no vector layer is on top, the raster layer cell values will be shown.
+Unlike vector layers that can have multiple attributes,
+raster cells have a single value for each band.
+
+**<p style="text-align: center;">
+![hover-popup](images/raster-hover-popup.png)
+</p>**
+
+**<p style="text-align: center;">
+Example Popup for Raster Layer Hover Event (<a href="../images/raster-hover-popup.png">see full-size image</a>)
+</p>**
