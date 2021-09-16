@@ -15,6 +15,10 @@ checkMkdocsVersion() {
   # On Debian Linux, similar to Cygwin:  mkdocs, version 0.17.3
   if [ "$operatingSystem" = "cygwin" -o "$operatingSystem" = "linux" ]; then
     mkdocsVersionFull=$(mkdocs --version)
+    # Check if the last command worked, and if not, try `python3 -m mkdocs --version`.
+    if [ "$?" = "1" ]; then
+      mkdocsVersionFull=$(python3 -m mkdocs --version)
+    fi
   elif [ "$operatingSystem" = "mingw" ]; then
     mkdocsVersionFull=$(py -m mkdocs --version)
   else
@@ -95,6 +99,10 @@ if [ "$operatingSystem" = "cygwin" -o "$operatingSystem" = "linux" ]; then
   # For cygwin and linux, 'mkdocs' will probably be in the PATH
   echo "On Cygwin and Linux... running 'mkdocs serve...'"
   mkdocs serve -a 0.0.0.0:8000
+  # Check if the last command worked, and if not, try `python3 -m mkdocs serve -a 0.0.0.0:8001`.
+  if [ "$?" = "1" ]; then
+    python3 -m mkdocs serve -a 0.0.0.0:8000
+  fi
 elif [ "$operatingSystem" = "mingw" ]; then
   # This is used by Git Bash
   echo "On MinGW (Git Bash) ... running 'py -m mkdocs serve...'"

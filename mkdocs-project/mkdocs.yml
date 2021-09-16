@@ -8,8 +8,16 @@ nav:
 - Introduction: introduction/introduction.md
 - Getting Started: getting-started/getting-started.md
 - InfoMapper Features: features/features.md
+- Visualizations:
+  - Time Series Graphs: viz/ts-graphs.md
+  - Time Series Heatmap: viz/ts-heatmap.md
+  - Tidy Tree: viz/tidy-tree.md
+  - Treemap: viz/treemap.md
 - Resources: resources/resources.md
 - Troubleshooting: troubleshooting/troubleshooting.md
+- Appendix - Data Formats:
+  - CSV: appendix-data-formats/csv.md
+  - JSON: appendix-data-formats/json.md
 - Appendix - Install and Config:
   - Overview: appendix-install/overview.md
   - app-config.json: appendix-install/app-config.md
@@ -29,9 +37,9 @@ extra_css:
 # ------------------------------------------------
 # Google Analytics
 # - see:  https://squidfunk.github.io/mkdocs-material/getting-started/#google-analytics
-google_analytics:
- - 'UA-135465513-1'
- - auto
+# google_analytics:
+#  - 'UA-135465513-1'
+#  - auto
 # ------------------------------------------------
 # Favicon is supposed to automatically be found:
 # - in docs/img/favicon.ico
