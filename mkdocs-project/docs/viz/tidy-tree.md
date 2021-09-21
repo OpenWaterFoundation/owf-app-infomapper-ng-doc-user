@@ -78,47 +78,51 @@ respectively, the configuration would contain the following properties:
 
 #### JSON ####
 
-**TODO - Need to talk to Steve about naming conventions**
-
-JSON data files deal with Tree elements and their children.
+In general, JSON data needs to be set up like the example below. The top level
+property represents the Colorado Water Basins. The basins that it contains are
+the North & South Platte, and Arkansas; it's children. Each basin contains
+rivers. The "name" and "children" property names can be arbitrarily named,
+but the general set up of an attribute and one or more attributes it contains
+should be used. The JSON data file will be directly used by D3 to create the
+Tidy Tree.
 
 An example JSON data file to create the simple Tidy Tree above:
 
 ```json
 {
-  "Basin": "Colorado Water Basins",
+  "name": "Colorado Water Basins",
   "children": [
     {
-      "Basin": "South Platte Basin",
+      "name": "South Platte Basin",
       "children": [
-        { "River Name": "River A" },
-        { "River Name": "River B" },
-        { "River Name": "River C" },
-        { "River Name": "River D" }
+        { "name": "River A" },
+        { "name": "River B" },
+        { "name": "River C" },
+        { "name": "River D" }
       ]
     },
     {
-      "Basin": "Arkansas Basin",
+      "name": "Arkansas Basin",
       "children": [
-        { "River Name": "River E" },
-        { "River Name": "River F" },
-        { "River Name": "River G" },
-        { "River Name": "River H" },
-        { "River Name": "River I" }
+        { "name": "River E" },
+        { "name": "River F" },
+        { "name": "River G" },
+        { "name": "River H" },
+        { "name": "River I" }
       ]
     },
     {
-      "Basin": "North Platte Basin",
+      "name": "North Platte Basin",
       "children": [
-        { "River Name": "River J" }
+        { "name": "River J" }
       ]
     },
     {
-      "Basin": "Colorado Basin",
+      "name": "Colorado Basin",
       "children": [
-        { "River Name": "River K" },
-        { "River Name": "River L" },
-        { "River Name": "River M" }
+        { "name": "River K" },
+        { "name": "River L" },
+        { "name": "River M" }
       ]
     }
   ]

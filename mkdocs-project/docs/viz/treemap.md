@@ -81,4 +81,92 @@ and value respectively, the configuration would contain the following properties
 
 #### JSON ####
 
-**TODO - Need to talk to Steve about naming conventions**
+In general, JSON data needs to be set up like the example below. The top level
+property represents the Colorado Water Basins. The basins that it contains are
+the North & South Platte, and Arkansas; it's children. Each basin contains
+rivers. The "name", "children" and "value" property names can be arbitrarily named,
+but the general set up of an attribute and one or more attributes it contains
+should be used. The JSON data file will be directly used by D3 to create the
+Tidy Tree. 
+
+An example JSON data file to create the simple Tidy Tree above:
+
+```json
+{
+  "name": "Colorado Water Basins",
+  "children": [
+    {
+      "name": "South Platte Basin",
+      "children": [
+        {
+          "name": "River A",
+          "value": 3938
+        },
+        {
+          "name": "River B",
+          "value": 3812
+        },
+        {
+          "name": "River C",
+          "value": 6714
+        },
+        {
+          "name": "River D",
+          "value": 743
+        }
+      ]
+    },
+    {
+      "name": "Arkansas Basin",
+      "children": [
+        {
+          "name": "River E",
+          "value": 3534
+        },
+        {
+          "name": "River F",
+          "value": 5731
+        },
+        {
+          "name": "River G",
+          "value": 7840
+        },
+        {
+          "name": "River H",
+          "value": 5914
+        },
+        {
+          "name": "River I",
+          "value": 3416
+        }
+      ]
+    },
+    {
+      "name": "North Platte Basin",
+      "children": [
+        {
+          "name": "River J",
+          "value": 7074
+        }
+      ]
+    },
+    {
+      "name": "Colorado Basin",
+      "children": [
+        {
+          "name": "River K",
+          "value": 6969
+        },
+        {
+          "name": "River L",
+          "value": 1714
+        },
+        {
+          "name": "River M",
+          "value": 2997
+        }
+      ]
+    }
+  ]
+}
+```
