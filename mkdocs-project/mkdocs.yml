@@ -13,6 +13,7 @@ nav:
   - Time Series Heatmap: viz/ts-heatmap.md
   - Tidy Tree: viz/tidy-tree.md
   - Treemap: viz/treemap.md
+  - Gapminder: viz/gapminder.md
 - Resources: resources/resources.md
 - Troubleshooting: troubleshooting/troubleshooting.md
 - Appendix - Data Formats:

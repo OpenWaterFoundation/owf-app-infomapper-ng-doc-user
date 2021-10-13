@@ -87,7 +87,13 @@ the North & South Platte, and Arkansas; it's children. Each basin contains
 rivers. The "name", "children" and "value" property names can be arbitrarily named,
 but the general set up of an attribute and one or more attributes it contains
 should be used. The JSON data file will be directly used by D3 to create the
-Tidy Tree. 
+Tidy Tree.
+
+>NOTE: Although the below properties can be named differently than the example,
+once a name has been decided, it must be the same for each use of that property.
+For example, if "name" is changed to "Attribute", all subsequent uses of "name"
+must also be "Attribute". If value is changed to "Storm Water Equivalent", it must
+also be used everywhere else.
 
 An example JSON data file to create the simple Tidy Tree above:
 

@@ -86,6 +86,12 @@ but the general set up of an attribute and one or more attributes it contains
 should be used. The JSON data file will be directly used by D3 to create the
 Tidy Tree.
 
+>NOTE: Although the below properties can be named differently than the example,
+once a name has been decided, it must be the same for each use of that property.
+For example, if "name" is changed to "Attribute", all subsequent uses of "name"
+must also be "Attribute". If children is changed to "Basin Features", it must
+also be used everywhere else.
+
 An example JSON data file to create the simple Tidy Tree above:
 
 ```json
