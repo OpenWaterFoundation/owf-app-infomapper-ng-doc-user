@@ -11,7 +11,7 @@ chart so that data visualization could be user friendly and easy to use.
 
 A JSON file is used to provide the InfoMapper with the necessary details to create
 and display the Gapminder visualization, any annotations for the data, and other
-information. All of the following properties must be Please note that this is a work in progress, and some configuration
+information. Please note that this is a work in progress, and some configuration
 properties might change or become deprecated in future releases. The following table
 describes the properties and values that are utilized.
 
@@ -19,7 +19,7 @@ describes the properties and values that are utilized.
 | ---- | ---- | ---- |
 | `AnnotationsFileName` | The absolute or relative path from the `DataFileName` path to the file containing annotations for the visualization. | `None` |
 | `DataFileName`<br><b>required</b> | The absolute path to the file containing the data to be displayed in the Gapminder visualization. | `None - must be specified` |
-| `DocFilePath` | The absolute or relative path from the `DataFileName` path to the HTML, Markdown, or regular text file containing text to be displayed in a Documentation Dialog. | `None` |
+| `DocFilePath` | The absolute or relative path from the `DataFileName` path to the HTML, Markdown, or regular text file containing text to be displayed in a Documentation Dialog. Enables the `Documentation` Dialog button. | `None` |
 |  | **Visualization Display** |  |
 | `BottomXAxisTitleString` | The visualization X axis title. | `None` |
 | `InputDateFormat` | Formats the date on the visualization. |  |
@@ -30,14 +30,18 @@ describes the properties and values that are utilized.
 |  | **Visualization Setup** |  |
 | `AnimationSpeed` | Sets the visualization animation speed from `1` - `100`, `1` being the slowest and `100` the fastest. | `75` |
 | `TimeStep`<br><b>required</b> | The visualization time increment string. E.g. `1Year`, `6months`, `1day`. | `1Year` |
-| `VariableNames`<br><b>required</b> | Holds each of the necessary fields for Gapminder creation and their supplied configuration header names. Has properties of its own, and can be found in the `VariableNames` table below. |  |
+| `VariableNames`<br><b>required</b> | Holds each of the necessary fields for Gapminder creation and their supplied configuration header names. Has properties of its own, and can be found in the `VariableNames` table below. | See `VariableNames` table below. |
 | `XAxisScale`<br><b>required</b> | The scale to display on the visualization X axis. Options are `log`, `linear`. | `None` |
 | `YAxisScale`<br><b>required</b> | The scale to display on the visualization Y axis. Options are `log`, `linear`. | `None` |
 | `YMax`<br><b>required</b> | The visualization Y axis max value. | `None - must be specified` |
 |  | **Not yet implemented** |  |
 | `AnnotationShapes` | Not currently in use. |  |
+| `DatasetChoicesLabel` | Text to be displayed before the multiple dataset dropdown. | None - must be specified if `MultipleDatasets` is set to true. |
+| `DatasetChoicesList` | A list of options to be displayed in the multiple dataset dropdown. | None - must be specified if `MultipleDatasets` is set to true. |
+| `DefaultDatasetChoice` | The default dataset to display if multiple datasets are given. | None - must be specified if `MultipleDatasets` is set to true. |
 | `DeveloperToolsEnabled` | Not currently in use. |  |
 | `Interpolate` | Not currently in use. |  |
+| `MultipleDatasets` | Boolean describing whether multiple datasets will be used in the visualization. | `false` |
 | `TimeSeriesEnabled` | Not currently in use. |  |
 | `TracerNames` | Not currently in use. |  |
 | `RepositoryURL` | Not currently in use. |  |
