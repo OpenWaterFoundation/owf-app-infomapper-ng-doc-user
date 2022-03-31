@@ -5,16 +5,6 @@ concepts that are used throughout the documentation.
 See the [Getting Started](../getting-started/getting-started.md) section for information
 about using the software.
 
-* [Need for the InfoMapper](#need-for-the-infomapper)
-* [User Interface Overview](#user-interface-overview)
-* [Concepts](#concepts)
-	+ [Map Configurations](#map-configurations)
-	+ [Events](#events)
-* [Alternatives to the InfoMapper](#alternatives-to-the-infomapper)
-* [Next Steps](#next-steps)
-
---------------
-
 ## Need for the InfoMapper ##
 
 The InfoMapper has been created to meet needs related to publishing, maps, 

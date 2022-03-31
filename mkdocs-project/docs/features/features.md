@@ -2,17 +2,6 @@
 
 This page describes InfoMapper features.
 
-* [Introduction](#introduction)
-* [Browser Interactions](#browser-interactions)
-* [Menus](#menus)
-* [Map](#map)
-	+ [Mouseover Popup](#mouseover-popup)
-	+ [Mouse Click Popup](#mouse-click-popup)
-* [Map Legend](#map-legend)
-* [Content Pages](#content-pages)
-
--------------
-
 ## Introduction ##
 
 The InfoMapper application provides access to maps, narrative content pages, links to other websites,

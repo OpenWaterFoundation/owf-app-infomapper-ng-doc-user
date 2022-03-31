@@ -1,0 +1,1 @@
+# InfoMapper / Dashboard / Sparkline Widget #
