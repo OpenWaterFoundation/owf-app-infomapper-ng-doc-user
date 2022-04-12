@@ -18,7 +18,7 @@ Other configuration files are provided for maps.
 
 The following is an example of an `app-config.json` configuration file:
 
-```
+```json
 {
   "title": "Poudre Basin Information",
   "dataUnitsPath": "/system/DATAUNIT",
@@ -26,11 +26,17 @@ The following is an example of an `app-config.json` configuration file:
   "googleAnalyticsTrackingId": "UA-123456789-1",
   "homePage": "/content-pages/home.md",
   "version": "0.2.0.dev (2020-05-05)",
+  "datastores": [
+    {
+      "name": "StateModGitHub",
+      "type": "owf.datastore.statemod",
+      "rootUrl": "https://raw.githubusercontent.com/path"
+    }
+  ],
   "mainMenu": [
     {
       "id": "BasinEntities",
       "name": "Basin Entities",
-      "align": "left",
       "menus": [
         {
           "id" : "water-districts",
@@ -51,7 +57,6 @@ The following is an example of an `app-config.json` configuration file:
       "id": "about-the-project",
       "name": "About the Project",
       "action": "contentPage",
-      "align": "right",
       "markdownFile": "/content-pages/about-the-project.md"
     }
   ]
@@ -69,14 +74,13 @@ Top-level application properties are described in the following table.
 | **Property**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Type** | **Description** | **Default** |
 | -- | -- | -- | -- |
 | `dataUnitsPath` | file path | Path to the data units file, which is used to specify output precision for units, and factors to allow converting between units.  The format of the data units file is the same as TSTool and the TSTool `system/DATAUNIT` file can be used. | Default output precision will be used and units conversion is not allowed. |
+| `datastores` | array | User provided datastores for directing the InfoMapper to retrieve data from a specific datastore, server, CDN, etc. Datastore properties can be found in the [datastores](#datastore-datastores-properties) table. | None |
 | `favicon` | file path | Path to a favicon image file to use for website, which is shown in the browser tab. | Open Water Foundation favicon. |
 | `googleAnalytics`<br>`TrackingId` | string | The Google Analytics tracking identifier, to enable tracking web page traffic. | No analytics. |
 | `homePage` | file path | Path to the home page, which is shown when the application starts.  This is typically `/content-pages/home.md`.  Markdown will be converted to html.  See the [Path Specification](#path-specification) section. | Blank page. |
 | `mainMenu`<br>**required** | array | Main menu definition - see the next section. | None - must be specified. |
 | `title`<br>**required** | string | Title for the application, shown on the left side of the menu bar and is also used as the web page title shown in web browser tabs. | None - must be specified. |
 | `version`<br>**required** | string |  Version of the application configuration in format `0.2.0.dev (2020-05-05)`.  This is **not** the InfoMapper software version.  | None - must be specified. |
-| ========== | ========= | Proposed properties | ============= |
-| `googlenAnalytics`<br>`TrackingId` | string | Google Analytics tracking identifier. | Analytics are not used. |
 
 ## Main Menu (`mainMenu`) Properties ##
 
@@ -92,7 +96,6 @@ Either the `menus` or `action` property should be specified.
 | `id`<br>**required** | string | Internal identifier for the main menu, will be used in the URL.  See the [InfoMapper Application URL Mapping](#infomapper-application-url-mapping) section. | None - must be specified. |
 | `name`<br>**required** | string | The text displayed for the menu. | None - must be specified. |
 | `action` | string | Indicates that selecting the main menu item will cause an action:<ul><li>`contentPage` - display a content page.  Specify the name of the content file using the `markdownFile` property.</li></ul> | |
-| `align` | string | The menu alignment:  `left` or ?. | Required? |
 | `enabled` | boolean | Whether or not the menu is enabled, `false` (or `"false"`) or `true` (or `"true"`). Disabled menus will be shown in grey and will not respond to user actions. | `true` |
 | `visible` | boolean | Whether or not the menu is visible, `false` (or `"false"`) or `true` (or `"true"`). Non-visible menus will not be shown in the menu.  This is useful for creating a placeholder in the configuration file. | `true` |
 | =========== | ====== | Properties for sub-menus. | ============ |
@@ -123,6 +126,15 @@ Define each menu as an item in the `menus` array (see previous section).
 | `url` | URL | URL of page to link to.  A new web browser tab will be opened so that the current state of the InfoMapper is not lost.  See [Path Specification](#path-specification) section.| |
 | =========== | ====== | Properties if `action=mapProject`. | ============ |
 | `mapProject` | file path | Path to a [GeoMapProject JSON file](http://software.openwaterfoundation.org/geoprocessor/latest/doc-user/appendix-geomapproject/geomapproject/) to display.  Currently, only GeoMapProject with `projectType=SingleMap` (one map in the project) is supported.  See the [Path Specification](#path-specification) section. | |
+
+## Datastore (`datastores`) Properties ##
+
+| **Property** | **Description** | **Default** |
+| ---- | ---- | ---- |
+| `name`<br>**required** | The unique name of the datastore being provided. Must not be one of the following built-in datastore names:<br><ul><li>`Delimited`</li><li>`DateValue`</li><li>`StateMod`</li></ul> | None - must be provided. |
+| `type`<br>**required** | A string representing the type of Datastore being used. The supported datastores for the InfoMapper / Common package are as follows:<br><ul><li>`owf.datastore.delimited`</li><li>`owf.datastore.datevalue`</li><li>`owf.datastore.statemod`</li></ul> | None - must be provided. |
+| `rootUrl`<br>**required** | The root URL of the datastore. A file path from a TSID will be appended to this URL if the Datastore is provided in the TSID. More info on TSID creation can be found in the [**CDSS / TSTool / TSID** documentation](https://opencdss.state.co.us/tstool/latest/doc-user/command-ref/TSID/TSID/#overview).<br>**NOTE:** Depending on the desired resource, [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) issues may arise. If possible, try to confirm that the requested resource will be able to respond correctly if an outside request is performed. | None - must be provided. |
+| `aliases` | An array of strings representing other names that can be provided in the TSID to find this datastore. | None |
 
 ## Path Specification ##
 
