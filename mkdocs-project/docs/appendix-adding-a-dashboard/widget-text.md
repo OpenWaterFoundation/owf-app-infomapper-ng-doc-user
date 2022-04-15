@@ -10,8 +10,8 @@ for displaying a Text Widget on a dashboard.
 
 | **Property** | **Description** | **Default** |
 | ---- | ---- | ---- |
-| type<br>**required** | The type of widget to create and display in the dashboard. The full list of available widget types are as follows:<br><ul><li>`textHTML` - Display text from a HTML file.</li><li>`textMarkdown` - Display text from a markdown file.</li></ul> | None - must be specified to be displayed. |
-| dataPath<br>**required** | The path to the text data file being used by this widget. Can either be an absolute path that assumes the project's `src/assets/app/` is the default home directory, or a relative path from the dashboard configuration file. | None - must be specified. |
+| type<br>**required** | The type of widget to create and display in the dashboard. The full list of available Text Widget types are as follows:<br><ul><li>`textHTML` - Display text from a HTML file.</li><li>`textMarkdown` - Display text from a markdown file.</li></ul> | None - must be specified to be displayed. |
+| textPath<br>**required** | The path to the text data file being used by this widget. Can either be an absolute path that assumes the project's `src/assets/app/` is the default home directory, or a relative path from the dashboard configuration file. | None - must be specified. |
 | name | A name for the widget. | None. |
 | description | A description of what the widget will display on the dashboard. | None. |
 | columns | The amount of columns the widget takes up. **NOTE:** The amount provided *must* be equal to or less than the number used for the **columns** property given in the main dashboard layout above, or else the dashboard will not create correctly. | `1` |
@@ -44,8 +44,8 @@ dashboard configuration's **widgets** array.
 }
 ```
 
-![Simple Text Widget](../images/simple-text-markdown.png)
+![Simple Text Widget](./images/simple-text-markdown.png)
 
 **<p style="text-align: center;">
-Simple Text Widget Example (<a href="../../images/simple-text-markdown.png">see full-size image</a>)
+Simple Text Widget Example (<a href="../images/simple-text-markdown.png">see full-size image</a>)
 </p>**

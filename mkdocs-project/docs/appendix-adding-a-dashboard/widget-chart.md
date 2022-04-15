@@ -12,13 +12,13 @@ for displaying a Chart Widget on a dashboard.
 
 | **Property** | **Description** | **Default** |
 | ---- | ---- | ---- |
-| type<br>**required** | The type of widget to create and display in the dashboard. The full list of available widget types are as follows:<br><ul><li>`chart` - Display a chart on the dashboard.</li></ul> | None - must be specified to be displayed. |
+| type<br>**required** | The type of widget to create and display in the dashboard. The full list of available Chart Widget types are as follows:<br><ul><li>`chart` - Display a chart on the dashboard.</li></ul> | None - must be specified to be displayed. |
+| dataPath<br>**required** |  | None - must be specified. |
+| graphTemplatePath<br>**required** |  | None - must be specified. |
 | name | A name for the widget. | None. |
 | description | A description of what the widget will display on the dashboard. | None. |
 | columns | The amount of columns the widget takes up. **NOTE:** The amount provided *must* be equal to or less than the number used for the **columns** property given in the main dashboard layout above, or else the dashboard will not create correctly. | `1` |
 | rows | The amount of rows the widget takes up. | `1` |
-| dataPath | **Placeholder**. |  |
-| graphTemplatePath | **Placeholder**. |  |
 | style | An object representing the styling of the widget. All available options are shown below in the **style** table. |  |
 
 ### style ###
@@ -49,8 +49,8 @@ configuration file, and what it looks like on a dashboard.
 }
 ```
 
-![Simple Chart Widget](../images/simple-chart.png)
+![Simple Chart Widget](./images/simple-chart.png)
 
 **<p style="text-align: center;">
-Simple Chart Widget Example (<a href="../../images/simple-chart.png">see full-size image</a>)
+Simple Chart Widget Example (<a href="../images/simple-chart.png">see full-size image</a>)
 </p>**

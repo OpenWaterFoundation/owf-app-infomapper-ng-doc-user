@@ -7,8 +7,6 @@ Dashboard in an application.
 
 ## Adding a dashboard to app-config.json ##
 
-**Need to add app-config.json documentation and provide a link to it from here.**
-
 Adding a dashboard to an application can be done by first adding it as a navigation
 bar button in the main `app-config.json` file, which can look similar to the following:
 
@@ -22,6 +20,9 @@ bar button in the main `app-config.json` file, which can look similar to the fol
   "visible": true
 }
 ```
+
+More information on the application configuration file can be found in the
+[Install and Config appendix](../appendix-install/app-config.md).
 
 ## Configuration file ##
 
@@ -128,8 +129,20 @@ displayed after.
 
 ### Resulting dashboard ###
 
-![Simple Dashboard](../images/simple-dashboard.png)
+![Simple Dashboard](./images/simple-dashboard.png)
 
 **<p style="text-align: center;">
-Dashboard Example (<a href="../../images/simple-dashboard.png">see full-size image</a>)
+Simple Dashboard Example (<a href="../images/simple-dashboard.png">see full-size image</a>)
 </p>**
+
+### More complex dashboard example ##
+
+The following is a more complex example of what a dashboard can display. The dashboard
+configuration file is not shown.
+
+![Complex Dashboard](./images/complex-dashboard.png)
+
+**<p style="text-align: center;">
+Complex Dashboard Example (<a href="../images/complex-dashboard.png">see full-size image</a>)
+</p>**
+
