@@ -8,21 +8,21 @@ contains property names and its value.
 The following table describes every required/possible property that can be added
 for displaying a Map Widget on a dashboard.
 
-| **Property** | **Description** | **Default** |
+| **Property**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default** |
 | ---- | ---- | ---- |
-| type<br>**required** | The type of widget to create and display in the dashboard. The full list of available Map Widget types are as follows:<br><ul><li>`map` - Display a standalone map using a map configuration file.</li></ul> | None - must be specified to be displayed. |
-| mapConfigPath<br>**required** | The path to a map configuration file being used by this widget. Can either be an absolute path that assumes the project's `src/assets/app/` is the default home directory, or a relative path from the dashboard configuration file. More information on creating a map configuration file can be found at the [InfoMapper GeoMapProject Documentation](https://software.openwaterfoundation.org/geoprocessor/latest/doc-user/appendix-geomapproject/geomapproject/). | None - must be specified. |
-| name | A name for the widget. | None. |
-| description | A description of what the widget will display on the dashboard. | None. |
-| columns | The amount of columns the widget takes up. **NOTE:** The amount provided *must* be equal to or less than the number used for the **columns** property given in the main dashboard layout above, or else the dashboard will not create correctly. | `1` |
-| rows | The amount of rows the widget takes up. | `1` |
-| style | An object representing the styling of the widget. All available options are shown below in the **style** table. Note that the map widget covers the entire area of the widget, so setting any additional styling like the background will not be seen.  |  |
+| `type`<br>**required** | The type of widget to create and display in the dashboard. The full list of available Map Widget types are as follows:<br><ul><li>`map` - Display a standalone map using a map configuration file.</li></ul> | None - must be specified to be displayed. |
+| `mapConfigPath`<br>**required** | The path to a map configuration file being used by this widget. Can either be an absolute path that assumes the project's `src/assets/app/` is the default home directory, or a relative path from the dashboard configuration file. More information on creating a map configuration file can be found at the [InfoMapper GeoMapProject Documentation](https://software.openwaterfoundation.org/geoprocessor/latest/doc-user/appendix-geomapproject/geomapproject/). | None - must be specified. |
+| `name` | A name for the widget. | None. |
+| `description` | A description of what the widget will display on the dashboard. | None. |
+| `columns` | The amount of columns the widget takes up. **NOTE:** The amount provided *must* be equal to or less than the number used for the **columns** property given in the [Dashboard layout](./add-dashboard.md#layout), or the dashboard will not create correctly. | `1` |
+| `rows` | The amount of rows the widget takes up. | `1` |
+| `style` | An object representing the styling of the widget. All available options are shown below in the **style** table. Note that the map widget covers the entire area of the widget, so setting any additional styling like the background will not be seen.  |  |
 
 ### style ###
 
 | **Property** | **Description** | **Default** |
 | ---- | ---- | ---- |
-| backgroundColor | The background color of each widget. | `gray` |
+| `backgroundColor` | The background color of each widget. | `gray` |
 
 ----
 

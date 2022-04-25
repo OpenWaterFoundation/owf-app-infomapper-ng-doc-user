@@ -8,21 +8,21 @@ contains property names and its value.
 The following table describes every required/possible property that can be added
 for displaying a Image Widget on a dashboard.
 
-| **Property** | **Description** | **Default** |
+| **Property**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default** |
 | ---- | ---- | ---- |
-| type<br>**required** | The type of widget to create and display in the dashboard. The full list of available Image Widget types are as follows:<br><ul><li>`image` - Display a single image on the dashboard.</li></ul> | None - must be specified to be displayed. |
-| imagePath<br>**required** | The path to the image file being used by this widget. Can either be an absolute path that assumes the project's `src/assets/app/` is the default home directory, or a relative path from the dashboard configuration file. | None - must be specified. |
-| name | A name for the widget. | None. |
-| description | A description of what the widget will display on the dashboard. | None. |
-| columns | The amount of columns the widget takes up. **NOTE:** The amount provided *must* be equal to or less than the number used for the **columns** property given in the main dashboard layout above, or else the dashboard will not create correctly. | `1` |
-| rows | The amount of rows the widget takes up. | `1` |
-| style | An object representing the styling of the widget. All available options are shown below in the **style** table. |  |
+| `type`<br>**required** | The type of widget to create and display in the dashboard. The full list of available Image Widget types are as follows:<br><ul><li>`image` - Display a single image on the dashboard.</li></ul> | None - must be specified to be displayed. |
+| `imagePath`<br>**required** | The path to the image file being used by this widget. Can either be an absolute path that assumes the project's `src/assets/app/` is the default home directory, or a relative path from the dashboard configuration file. | None - must be specified. |
+| `name` | A name for the widget. | None. |
+| `description` | A description of what the widget will display on the dashboard. | None. |
+| `columns` | The amount of columns the widget takes up. **NOTE:** The amount provided *must* be equal to or less than the number used for the **columns** property given in the [Dashboard layout](./add-dashboard.md#layout), or the dashboard will not create correctly. | `1` |
+| `rows` | The amount of rows the widget takes up. | `1` |
+| `style` | An object representing the styling of the widget. All available options are shown below in the **style** table. |  |
 
 ### style ###
 
 | **Property** | **Description** | **Default** |
 | ---- | ---- | ---- |
-| backgroundColor | The background color of each widget. | `gray` |
+| `backgroundColor` | The background color of each widget. | `gray` |
 
 ----
 

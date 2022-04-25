@@ -1,6 +1,6 @@
 # InfoMapper / Dashboard / Status Indicator Widget #
 
-**This widget is currently under development.**
+**This widget is currently under development and should not be used.**
 
 The Status Indicator Widget is created as an object in the dashboard configuration file that
 contains property names and its value.
@@ -10,21 +10,21 @@ contains property names and its value.
 The following table describes every required/possible property that can be added
 for displaying a Status Indicator Widget on a dashboard.
 
-| **Property** | **Description** | **Default** |
+| **Property**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default** |
 | ---- | ---- | ---- |
-| type<br>**required** | The type of widget to create and display in the dashboard. The full list of available Status Indicator Widget types are as follows:<br><ul><li>`statusIndicator` - Display a status indicator on the dashboard.</li></ul> | None - must be specified to be displayed. |
-| name | A name for the widget. | None. |
-| description | A description of what the widget will display on the dashboard. | None. |
-| columns | The amount of columns the widget takes up. **NOTE:** The amount provided *must* be equal to or less than the number used for the **columns** property given in the main dashboard layout above, or else the dashboard will not create correctly. | `1` |
-| rows | The amount of rows the widget takes up. | `1` |
-| title | The title to be displayed at the top of the widget. | None - must be specified to be displayed. |
-| style | An object representing the styling of the widget. All available options are shown below in the **style** table. |  |
+| `type`<br>**required** | The type of widget to create and display in the dashboard. The full list of available Status Indicator Widget types are as follows:<br><ul><li>`statusIndicator` - Display a status indicator on the dashboard.</li></ul> | None - must be specified to be displayed. |
+| `name` | A name for the widget. | None. |
+| `description` | A description of what the widget will display on the dashboard. | None. |
+| `columns` | The amount of columns the widget takes up. **NOTE:** The amount provided *must* be equal to or less than the number used for the **columns** property given in the [Dashboard layout](./add-dashboard.md#layout), or the dashboard will not create correctly. | `1` |
+| `rows` | The amount of rows the widget takes up. | `1` |
+| `title` | The title to be displayed at the top of the widget. | None - must be specified to be displayed. |
+| `style` | An object representing the styling of the widget. All available options are shown below in the **style** table. |  |
 
 ### style ###
 
 | **Property** | **Description** | **Default** |
 | ---- | ---- | ---- |
-| backgroundColor | The background color of each widget. | `gray` |
+| `backgroundColor` | The background color of each widget. | `gray` |
 
 ----
 

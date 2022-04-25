@@ -131,7 +131,7 @@ Define each menu as an item in the `menus` array (see previous section).
 
 | **Property** | **Description** | **Default** |
 | ---- | ---- | ---- |
-| `name`<br>**required** | The unique name of the datastore being provided. Must not be one of the following built-in datastore names:<br><ul><li>`Delimited`</li><li>`DateValue`</li><li>`StateMod`</li></ul> | None - must be provided. |
+| `name`<br>**required** | The unique name of the datastore being provided. Must not be one of the following built-in datastore names or their aliases:<br><ul><li>`Delimited`<ul><li>`CSV`</li></ul></li><li>`DateValue`<ul><li>`DV`</li></ul></li><li>`StateMod`<ul><li>`STM`</li></ul></li></ul> | None - must be provided. |
 | `type`<br>**required** | A string representing the type of Datastore being used. The supported datastores for the InfoMapper / Common package are as follows:<br><ul><li>`owf.datastore.delimited`</li><li>`owf.datastore.datevalue`</li><li>`owf.datastore.statemod`</li></ul> | None - must be provided. |
 | `rootUrl`<br>**required** | The root URL of the datastore. A file path from a TSID will be appended to this URL if the Datastore is provided in the TSID. More info on TSID creation can be found in the [**CDSS / TSTool / TSID** documentation](https://opencdss.state.co.us/tstool/latest/doc-user/command-ref/TSID/TSID/#overview).<br>**NOTE:** Depending on the desired resource, [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) issues may arise. If possible, try to confirm that the requested resource will be able to respond correctly if an outside request is performed. | None - must be provided. |
 | `aliases` | An array of strings representing other names that can be provided in the TSID to find this datastore. | None |
