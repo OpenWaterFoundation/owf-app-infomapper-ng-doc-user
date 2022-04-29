@@ -19,6 +19,7 @@ nav:
 - Appendix - Dashboard:
   - Adding a Dashboard: appendix-adding-a-dashboard/add-dashboard.md
   - Chart Widget: appendix-adding-a-dashboard/widget-chart.md
+  - Diagnostics Widget: appendix-adding-a-dashboard/widget-diagnostics.md
   - Image Widget: appendix-adding-a-dashboard/widget-image.md
   - Map Widget: appendix-adding-a-dashboard/widget-map.md
   - Selector Widget: appendix-adding-a-dashboard/widget-selector.md

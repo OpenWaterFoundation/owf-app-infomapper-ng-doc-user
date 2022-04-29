@@ -13,7 +13,7 @@ for displaying a Status Indicator Widget on a dashboard.
 | **Property**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default** |
 | ---- | ---- | ---- |
 | `type`<br>**required** | The type of widget to create and display in the dashboard. The full list of available Status Indicator Widget types are as follows:<br><ul><li>`statusIndicator` - Display a status indicator on the dashboard.</li></ul> | None - must be specified to be displayed. |
-| `name` | A name for the widget. | None. |
+| `name`<br>**required** | A unique name for the widget used for identification. | None. |
 | `description` | A description of what the widget will display on the dashboard. | None. |
 | `columns` | The amount of columns the widget takes up. **NOTE:** The amount provided *must* be equal to or less than the number used for the **columns** property given in the [Dashboard layout](./add-dashboard.md#layout), or the dashboard will not create correctly. | `1` |
 | `rows` | The amount of rows the widget takes up. | `1` |
@@ -28,7 +28,7 @@ for displaying a Status Indicator Widget on a dashboard.
 
 ----
 
-## Simple Status Indicator Widget object ##
+## Status Indicator Widget object ##
 
 The following is an example of a simple Status Indicator widget in the dashboard
 configuration file, and what it looks like on a dashboard. 

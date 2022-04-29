@@ -12,7 +12,7 @@ for displaying a Map Widget on a dashboard.
 | ---- | ---- | ---- |
 | `type`<br>**required** | The type of widget to create and display in the dashboard. The full list of available Map Widget types are as follows:<br><ul><li>`map` - Display a standalone map using a map configuration file.</li></ul> | None - must be specified to be displayed. |
 | `mapConfigPath`<br>**required** | The path to a map configuration file being used by this widget. Can either be an absolute path that assumes the project's `src/assets/app/` is the default home directory, or a relative path from the dashboard configuration file. More information on creating a map configuration file can be found at the [InfoMapper GeoMapProject Documentation](https://software.openwaterfoundation.org/geoprocessor/latest/doc-user/appendix-geomapproject/geomapproject/). | None - must be specified. |
-| `name` | A name for the widget. | None. |
+| `name`<br>**required** | A unique name for the widget used for identification. | None. |
 | `description` | A description of what the widget will display on the dashboard. | None. |
 | `columns` | The amount of columns the widget takes up. **NOTE:** The amount provided *must* be equal to or less than the number used for the **columns** property given in the [Dashboard layout](./add-dashboard.md#layout), or the dashboard will not create correctly. | `1` |
 | `rows` | The amount of rows the widget takes up. | `1` |
@@ -26,7 +26,7 @@ for displaying a Map Widget on a dashboard.
 
 ----
 
-## Simple Map Widget object ##
+## Map Widget object ##
 
 The following is an example of a simple map widget in the dashboard configuration
 file, and what it looks like on a dashboard. 

@@ -12,7 +12,7 @@ for displaying a Image Widget on a dashboard.
 | ---- | ---- | ---- |
 | `type`<br>**required** | The type of widget to create and display in the dashboard. The full list of available Image Widget types are as follows:<br><ul><li>`image` - Display a single image on the dashboard.</li></ul> | None - must be specified to be displayed. |
 | `imagePath`<br>**required** | The path to the image file being used by this widget. Can either be an absolute path that assumes the project's `src/assets/app/` is the default home directory, or a relative path from the dashboard configuration file. | None - must be specified. |
-| `name` | A name for the widget. | None. |
+| `name`<br>**required** | A unique name for the widget used for identification. | None. |
 | `description` | A description of what the widget will display on the dashboard. | None. |
 | `columns` | The amount of columns the widget takes up. **NOTE:** The amount provided *must* be equal to or less than the number used for the **columns** property given in the [Dashboard layout](./add-dashboard.md#layout), or the dashboard will not create correctly. | `1` |
 | `rows` | The amount of rows the widget takes up. | `1` |
@@ -26,7 +26,7 @@ for displaying a Image Widget on a dashboard.
 
 ----
 
-## Simple Image Widget object ##
+## Image Widget object ##
 
 The following is an example of a simple Image widget in the dashboard configuration
 file, and what it looks like on a dashboard. 
