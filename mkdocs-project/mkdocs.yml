@@ -26,6 +26,7 @@ nav:
   - Status Indicator Widget: appendix-adding-a-dashboard/widget-status-indicator.md
   - Text Widget: appendix-adding-a-dashboard/widget-text.md
   - Troubleshooting: appendix-adding-a-dashboard/troubleshooting.md
+  - Data Formatting: appendix-adding-a-dashboard/dataFormat.md
 - Appendix - Data Formats:
   - CSV: appendix-data-formats/csv.md
   - JSON: appendix-data-formats/json.md
