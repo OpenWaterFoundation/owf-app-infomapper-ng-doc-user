@@ -24,6 +24,7 @@ for displaying a Image Widget on a dashboard.
 | **Property** | **Description** | **Default** |
 | ---- | ---- | ---- |
 | `backgroundColor` | The background color of each widget. | `gray` |
+| `textColor` | The color of the title in the image widget if provided. | `black` |
 
 ----
 
