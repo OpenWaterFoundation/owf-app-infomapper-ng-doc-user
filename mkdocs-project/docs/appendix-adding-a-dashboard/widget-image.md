@@ -42,7 +42,8 @@ file, and what it looks like on a dashboard.
   "columns": 2,
   "rows": 1,
   "style": {
-    "backgroundColor": "black"
+    "backgroundColor": "black",
+    "textColor": "#000000"
   }
 }
 ```
