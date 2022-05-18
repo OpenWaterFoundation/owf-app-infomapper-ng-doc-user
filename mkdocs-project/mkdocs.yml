@@ -25,6 +25,7 @@ nav:
   - Selector Widget: appendix-adding-a-dashboard/widget-selector.md
   - Status Indicator Widget: appendix-adding-a-dashboard/widget-status-indicator.md
   - Text Widget: appendix-adding-a-dashboard/widget-text.md
+  - Title Widget: appendix-adding-a-dashboard/widget-title.md
   - Troubleshooting: appendix-adding-a-dashboard/troubleshooting.md
   - Data Formatting: appendix-adding-a-dashboard/dataFormat.md
 - Appendix - Data Formats:

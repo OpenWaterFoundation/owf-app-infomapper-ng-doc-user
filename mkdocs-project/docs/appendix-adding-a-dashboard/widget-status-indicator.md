@@ -20,9 +20,11 @@ for displaying a Status Indicator Widget on a dashboard.
 | `description` | A description of what the widget will display on the dashboard. | None. |
 | `columns` | The amount of columns the widget takes up. **NOTE:** The amount provided *must* be equal to or less than the number used for the **columns** property given in the [Dashboard layout](./add-dashboard.md#layout), or the dashboard will not create correctly. | `1` |
 | `rows` | The amount of rows the widget takes up. | `1` |
+| `JSONArrayName` |  |  |
+| `classificationFile` |  |  |
 | `eventHandlers` | An array of objects with data that adds a listener to this widget and listens to another widget. More information can be found in the [eventHandlers](#eventhandlers) table. **NOTE: This feature is still a work in progress.** | None. |
 | `style` | An object representing the styling of the widget. All available options are shown below in the **style** table. |  |
-| ============= | ======================================================= | ========== |
+| =================== | ======================================================= | ========== |
 | <b>*</b> | These properties are only required if an eventHandler is not being used. For example, if a `SelectEvent` is added and this widget is listening to a Selector Widget, the data will have already been retrieved by that widget. If no eventHandler is given, it is assumed that this widget will get and process the data. In that case, it needs to know where it gets the data (`dataPath`), what kind of data is being retrieved (`dataFormat`), and the name of the desired value to display (`attributeName, etc.`). |  |
 
 ### eventHandlers ###
@@ -53,19 +55,18 @@ configuration file, and what it looks like on a dashboard.
   "description": "A simple Status Indicator widget on a dashboard.",
   "columns": 1,
   "rows": 1,
-  "title": "SWE Volume (acft)",
-  "dataPath": "https://data.colorado.gov/resource.json",
-  "dataFormat": "JSON",
-  "propertyName": "swsi",
+  "title": "10190007 SWSI",
+  "dataPath": "/basin-info/10190007-swsi.csv",
+  "dataFormat": "CSV",
+  "propertyName": "10190007_swsi",
+  "classificationFile": "/data-ts/indicator-swsi-classify.csv",
   "style": {
     "backgroundColor": "lightgrey"
   }
 }
 ```
 
-**The image will be added after the widget development is closer to completion.**
-
-![Simple Status Indicator Widget](./images/simple-status-indicator.png)
+![Simple Status Indicator Widget](../images/simple-status-indicator.png)
 
 **<p style="text-align: center;">
 Simple Status Indicator Widget Example (<a href="../images/simple-status-indicator.png">see full-size image</a>)
