@@ -35,6 +35,7 @@ nav:
   - Overview: appendix-install/overview.md
   - app-config.json: appendix-install/app-config.md
   - Map Event Configuration File: appendix-install/map-event-config-file.md
+  - Classification File: appendix-install/classification-file.md
   - Time Series Configuration File: appendix-install/time-series-config-file.md
 - Appendix - Release Notes:
   - Release Notes: appendix-release-notes/release-notes.md
