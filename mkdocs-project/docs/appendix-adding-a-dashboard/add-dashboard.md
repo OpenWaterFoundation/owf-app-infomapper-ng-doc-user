@@ -5,7 +5,7 @@ on a single screen. This can help viewing top level information easily at a glan
 This section describes how to configure necessary files to create and show a
 Dashboard in an application.
 
-## Adding a dashboard to app-config.json ##
+## Adding a dashboard to `app-config.json` ##
 
 Adding a dashboard to an application can be done by first adding it as a navigation
 bar button in the main `app-config.json` file, which can look similar to the following:
@@ -39,6 +39,7 @@ in the file.
 | ---- | ---- | ---- |
 | author | The name of creator of this dashboard configuration file. | None. |
 | title | The title of this dashboard configuration. | None. |
+| id | A unique string describing this dashboard. Can be used as the page URL. | None. |
 | version | The version of this dashboard configuration. | None. |
 
 ### layout ###
@@ -75,7 +76,7 @@ under active development, it will show **WIP** (work in progress) under the
 | iframe |  |  |
 | Video |  |  |
 
-### Dashboard configuration example file ###
+### Dashboard configuration file example ###
 
 The following is a simple configuration file example with the resulting dashboard
 displayed after.
