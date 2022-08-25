@@ -60,6 +60,9 @@ dashboard, with a link to the list of the properties it uses. If a widget is sti
 under active development, it will show **WIP** (work in progress) under the
 **Widget name** header property in the table.
 
+> **NOTE:** All paths used in widget properties can either be absolute to the project (usually
+`src/`), or relative to the dashboard configuration.
+
 | **Widget name**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Link** |
 | ---- | ---- | ---- |
 | Chart<br>**WIP** | Displays a Plotly chart using a graph template file created from [TSTool](https://learn.openwaterfoundation.org/owf-learn-tstool/). | [Chart Widget](./widget-chart.md) |

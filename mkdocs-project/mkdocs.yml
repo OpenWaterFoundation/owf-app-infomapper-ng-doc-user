@@ -19,14 +19,17 @@ nav:
 - Appendix - Dashboard:
   - Adding a Dashboard: appendix-adding-a-dashboard/add-dashboard.md
   - Chart Widget: appendix-adding-a-dashboard/widget-chart.md
+  - Diagnostics Widget: appendix-adding-a-dashboard/widget-diagnostics.md
   - Image Widget: appendix-adding-a-dashboard/widget-image.md
   - Map Widget: appendix-adding-a-dashboard/widget-map.md
   - Selector Widget: appendix-adding-a-dashboard/widget-selector.md
   - Status Indicator Widget: appendix-adding-a-dashboard/widget-status-indicator.md
   - Text Widget: appendix-adding-a-dashboard/widget-text.md
+  - Title Widget: appendix-adding-a-dashboard/widget-title.md
   - Troubleshooting: appendix-adding-a-dashboard/troubleshooting.md
 - Appendix - Story:
   - Adding a Story: appendix-adding-a-story/add-story.md
+  - Data Formatting: appendix-adding-a-dashboard/dataFormat.md
 - Appendix - Data Formats:
   - CSV: appendix-data-formats/csv.md
   - JSON: appendix-data-formats/json.md
@@ -34,6 +37,7 @@ nav:
   - Overview: appendix-install/overview.md
   - app-config.json: appendix-install/app-config.md
   - Map Event Configuration File: appendix-install/map-event-config-file.md
+  - Classification File: appendix-install/classification-file.md
   - Time Series Configuration File: appendix-install/time-series-config-file.md
 - Appendix - Release Notes:
   - Release Notes: appendix-release-notes/release-notes.md
