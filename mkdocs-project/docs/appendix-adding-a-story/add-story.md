@@ -1,5 +1,8 @@
 # InfoMapper / Story / Adding a Story
 
+**NOTE: This section is a work in progress and will likely change until this message
+is removed.**
+
 Stories can be used in applications by combining text, interactive maps, and other
 multimedia content to tell an immersive narrative.
 
@@ -22,9 +25,6 @@ More information on the application configuration file can be found in the
 [Install and Config appendix](../appendix-install/app-config.md).
 
 ## Configuration file ##
-
-**NOTE: This is a work in progress and will likely change until this message
-is removed.**
 
 The following tables describe each story configuration mandatory and optional
 properties, with a simple example at the end. Each section describes the "object"
@@ -70,7 +70,7 @@ displayed after.
         "pages": [
           {
             "metadata": {
-              "author": "Josh Keahey",
+              "author": "Jon Snow",
               "title": "Text & Map",
               "id": "text-map-example-1",
               "version": "1.0.0"
@@ -105,7 +105,7 @@ displayed after.
           },
           {
             "metadata": {
-              "author": "Josh Keahey",
+              "author": "Jon Snow",
               "title": "Test Story Page 2",
               "id": "text-map-example-2",
               "version": "1.0.0"
@@ -145,7 +145,7 @@ displayed after.
         "pages": [
           {
             "metadata": {
-              "author": "Josh Keahey",
+              "author": "Jon Snow",
               "title": "Text",
               "id": "text-example-1",
               "version": "1.0.0"
@@ -180,3 +180,58 @@ displayed after.
 
 ### Resulting story ###
 
+#### Page 1 ####
+
+![Simple Story Page 1](./images/simple-story-page-1.png)
+
+**<p style="text-align: center;">
+Simple Story Page 1 Example (<a href="../images/simple-story-page-1.png">see full-size image</a>)
+</p>**
+
+#### Page 2 ####
+
+![Simple Story Page 2](./images/simple-story-page-2.png)
+
+**<p style="text-align: center;">
+Simple Story Page 2 Example (<a href="../images/simple-story-page-2.png">see full-size image</a>)
+</p>**
+
+#### Page 3 ####
+
+![Simple Story Page 3](./images/simple-story-page-3.png)
+
+**<p style="text-align: center;">
+Simple Story Page 3 Example (<a href="../images/simple-story-page-3.png">see full-size image</a>)
+</p>**
+
+### Basic Story usage ###
+
+#### Story menu ####
+
+Each story has its own menu, separate from the main application menu. It is located
+directly below the main menu, and will display two sections: The story's 'main'
+menu on the left, and each chapter in the story on the right. The story's main menu
+will take the user to the story's first page of the first chapter. Each of the chapter
+menu buttons will send the user to the first page of the selected chapter for easier
+navigation within larger stories.
+
+#### Navigation between pages ####
+
+There are 4 ways to navigate around the story:
+
+1. Using the story menu buttons mentioned above to go between chapters quickly.
+
+2. Using the up & down arrow keys on the keyboard to navigate between pages. Note
+that this method does not allow wrapping, so pressing down on the last page of the
+story will not wrap and start back at the first page of the first chapter.
+
+3. Clicking on each desired page circle in the navigation bar on the right side of
+the story. A tooltip will describe what the page is about when hovered over.
+
+4. Scrolling the mouse wheel up or down to each page. Since the mouse can be over
+one of many different types of data 'widgets', the following section will
+go more into detail.
+
+#### Scrolling ####
+
+**Needs to be filled out.**

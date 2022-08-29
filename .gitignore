@@ -20,3 +20,6 @@ mkdocs-project/site/
 # PowerPoint
 #~$*.ppt*
 ~$*
+
+# VSCode settings.
+.vscode
