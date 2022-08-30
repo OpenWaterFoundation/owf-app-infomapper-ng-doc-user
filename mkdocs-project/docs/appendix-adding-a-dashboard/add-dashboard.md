@@ -37,18 +37,18 @@ in the file.
 
 | **Property** | **Description** | **Default** |
 | ---- | ---- | ---- |
-| author | The name of creator of this dashboard configuration file. | None. |
-| title | The title of this dashboard configuration. | None. |
-| id | A unique string describing this dashboard. Can be used as the page URL. | None. |
-| version | The version of this dashboard configuration. | None. |
+| `author` | The name of creator of this dashboard configuration file. | None. |
+| `title` | The title of this dashboard configuration. | None. |
+| `id` | A unique string describing this dashboard. Can be used as the page URL. | None. |
+| `version` | The version of this dashboard configuration. | None. |
 
 ### layout ###
 
 | **Property** | **Description** | **Default** |
 | ---- | ---- | ---- |
-| columns<br>**required** | The number of columns to create in the dashboard. | None - must be specified. |
-| backgroundColor | The background color of the container behind all widgets in the dashboard. | `white` |
-| gutterSize | The amount of pixels separating each Widget in the dashboard. | `1` |
+| `columns`<br>**required** | The number of columns to create in the dashboard. | None - must be specified. |
+| `backgroundColor` | The background color of the container behind all widgets in the dashboard. | `white` |
+| `gutterSize` | The amount of pixels separating each Widget in the dashboard. | `1` |
 
 ### widgets ###
 

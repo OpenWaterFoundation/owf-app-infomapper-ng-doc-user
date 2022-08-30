@@ -37,22 +37,22 @@ might be added later.
 
 | **Property** | **Description** | **Default** |
 | ---- | ---- | ---- |
-| story<br>**required** | A StoryMain object. | None - must be provided. |
+| `story`<br>**required** | A StoryMain object. | None - must be provided. |
 
 ### StoryMain ###
 
 | **Property** | **Description** | **Default** |
 | ---- | ---- | ---- |
-| name | The name of the Story. | None. |
-| chapters<br>**required** | An array of StoryChapter objects. | None - must be provided. |
+| `name` | The name of the Story. Shown as the Story's home button in the Story main menu for direct navigation to the Story's first page of its first chapter. | None. |
+| `chapters`<br>**required** | An array of StoryChapter objects. | None - must be provided. |
 
 ### StoryChapters ###
 
 | **Property** | **Description** | **Default** |
 | ---- | ---- | ---- |
-| name | The name of the Chapter. | None. |
-| tooltip | A tooltip for this chapter to be displayed on a story side navigation list hover.  | None. |
-| pages<br>**required** | A array of [Dashboard configuration objects](../appendix-adding-a-dashboard/add-dashboard.md#configuration-file). This is so each page can take advantage of the layout provided by a dashboard.  | None - must be provided. |
+| `name`<br>**required** | The name of the Chapter. Shown on the Story's main menu for direct navigation. | None. |
+| `tooltip` | A tooltip for this chapter to be displayed on the story main menu button.  | None. |
+| `pages`<br>**required** | A array of [Dashboard configuration objects](../appendix-adding-a-dashboard/add-dashboard.md#configuration-file). This is so each page can take advantage of the layout provided by a dashboard. The following are important Dashboard properties that the Story utilizes:<br><ul><li>`title` - The name of each Story page, and will be used as each page's tooltip in the story's side navigation list.</li><li>`id` - Used as a unique name and shown as an anchor in the site URL.</li></ul> | None - must be provided. |
 
 ### Story configuration file example ###
 
@@ -234,4 +234,11 @@ go more into detail.
 
 #### Scrolling ####
 
-**Needs to be filled out.**
+Updates for handling mouse scrolling was needed to make a better experience
+for users. The following table describes different widgets and their scrolling behavior
+when shown in a story.
+
+| **Widget** | **Default scrolling behavior** | **Story scrolling behavior** |
+| ---- | ---- | ---- |
+| **Map** | Zoom in and out of the map. | By default, mouse scroll navigates the Story page forwards and backwards. This can be toggled by using the mouse scroll Leaflet control, which is located in the upper right part of the map.<br><img src="./images/simple-story-mouse-toggle.png" width="100px" height="175px"></img> |
+| **Text** | Scroll through the text widget if applicable. | Only scrolls through the widget, and does not keep scrolling when either the top or bottom of the text widget is hit. For example, will not scroll to the following page while the mouse is in the text widget. |

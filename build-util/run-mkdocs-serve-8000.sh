@@ -21,6 +21,8 @@ checkMkdocsVersion() {
     fi
   elif [ "${operatingSystem}" = "mingw" ]; then
     mkdocsVersionFull=$(py -m mkdocs --version)
+  elif [ "${operatingSystem}" = "macOS" ]; then
+    mkdocsVersionFull=$(python3 -m mkdocs --version)
   else
     echo ""
     echo "Don't know how to run on operating system ${operatingSystem}"
@@ -98,7 +100,7 @@ cd ../mkdocs-project || exit
 # Run 'mkdocs serve' using an appropriate variation of Python command line.
 echo "View the website using http://localhost:8000"
 echo "Stop the server with CTRL-C"
-if [ "${operatingSystem}" = "cygwin" ] || [ "${operatingSystem}" = "linux" ] || [ "${operatingSystem}" = "linux" ]; then
+if [ "${operatingSystem}" = "cygwin" ] || [ "${operatingSystem}" = "linux" ] || [ "${operatingSystem}" = "macOS" ]; then
   # For cygwin and linux, 'mkdocs' will probably be in the PATH
   echo "On Cygwin and Linux... running 'mkdocs serve...'"
   mkdocs serve -a 0.0.0.0:8000
