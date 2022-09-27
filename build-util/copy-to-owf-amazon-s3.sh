@@ -17,7 +17,7 @@ checkMkdocsVersion() {
   requiredMajorVersion="1"
   # On Cygwin, mkdocs --version gives:  mkdocs, version 1.0.4 from /usr/lib/python3.6/site-packages/mkdocs (Python 3.6)
   # On Debian Linux, similar to Cygwin:  mkdocs, version 0.17.3
-  if [ "$operatingSystem" = "cygwin" -o "$operatingSystem" = "linux" ]; then
+  if [ "$operatingSystem" = "cygwin" ] || [ "$operatingSystem" = "linux" ]; then
     mkdocsVersionFull=$(mkdocs --version)
   elif [ "$operatingSystem" = "mingw" ]; then
     mkdocsVersionFull=$(py -m mkdocs --version)
@@ -27,18 +27,18 @@ checkMkdocsVersion() {
     exit 1
   fi
   echo "MkDocs --version:  $mkdocsVersionFull"
-  mkdocsVersion=$(echo $mkdocsVersionFull | cut -d ' ' -f 3)
+  mkdocsVersion=$(echo "${mkdocsVersionFull}" | cut -d ' ' -f 3)
   echo "MkDocs full version number:  $mkdocsVersion"
-  mkdocsMajorVersion=$(echo $mkdocsVersion | cut -d '.' -f 1)
-  echo "MkDocs major version number:  $mkdocsMajorVersion"
-  if [ "$mkdocsMajorVersion" -lt $requiredMajorVersion ]; then
+  mkdocsMajorVersion=$(echo "${mkdocsVersion}" | cut -d '.' -f 1)
+  echo "MkDocs major version number:  ${mkdocsMajorVersion}"
+  if [ "${mkdocsMajorVersion}" -lt ${requiredMajorVersion} ]; then
     echo ""
-    echo "MkDocs version for this documentation must be version $requiredMajorVersion or later."
-    echo "MkDocs mersion that is found is $mkdocsMajorVersion, from full version ${mkdocsVersion}."
+    echo "MkDocs version for this documentation must be version ${requiredMajorVersion} or later."
+    echo "MkDocs mersion that is found is ${mkdocsMajorVersion}, from full version ${mkdocsVersion}."
     exit 1
   else
     echo ""
-    echo "MkDocs major version ($mkdocsMajorVersion) is OK for this documentation."
+    echo "MkDocs major version (${mkdocsMajorVersion}) is OK for this documentation."
   fi
 }
 
@@ -51,7 +51,7 @@ checkOperatingSystem()
     return
   fi
   operatingSystem="unknown"
-  os=`uname | tr [a-z] [A-Z]`
+  os=$(uname | tr '[:lower:]' '[:upper:]')
   case "${os}" in
     CYGWIN*)
       operatingSystem="cygwin"

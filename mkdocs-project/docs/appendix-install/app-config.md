@@ -7,7 +7,7 @@ Other configuration files are provided for maps.
 * [Introduction](#introduction)
 * [Application Properties](#application-properties)
 * [Main Menu Properties](#main-menu-mainmenu-properties)
-* [Menu Properties](#menu-menu-properties)
+* [SubMenu Properties](#submenu-submenu-properties)
 * [Path Specification](#path-specification)
 * [Property Modifiers](#property-modifiers)
 * [InfoMapper Application URL Mapping](#infomapper-application-url-mapping)
@@ -73,14 +73,14 @@ Top-level application properties are described in the following table.
 
 | **Property**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Type** | **Description** | **Default** |
 | -- | -- | -- | -- |
-| `dataUnitsPath` | file path | Path to the data units file, which is used to specify output precision for units, and factors to allow converting between units.  The format of the data units file is the same as TSTool and the TSTool `system/DATAUNIT` file can be used. | Default output precision will be used and units conversion is not allowed. |
+| `title`<br>**required** | string | Title for the application, shown on the left side of the menu bar and is also used as the web page title shown in web browser tabs. | None - must be specified. |
+| `homePage`<br>**required** | file path | Path to the home page, which is shown when the application starts.  This is typically `/content-pages/home.md`.  Markdown will be converted to html.  See the [Path Specification](#path-specification) section. | Blank page. |
+| `version`<br>**required** | string |  Version of the application configuration in format `0.2.0.dev (2020-05-05)`.  This is **not** the InfoMapper software version.  | None - must be specified. |
 | `datastores` | array | User provided datastores for directing the InfoMapper to retrieve data from a specific datastore, server, CDN, etc. Datastore properties can be found in the [datastores](#datastore-datastores-properties) table. | None |
+| `dataUnitsPath` | file path | Path to the data units file, which is used to specify output precision for units, and factors to allow converting between units.  The format of the data units file is the same as TSTool and the TSTool `system/DATAUNIT` file can be used. | Default output precision will be used and units conversion is not allowed. |
 | `favicon` | file path | Path to a favicon image file to use for website, which is shown in the browser tab. | Open Water Foundation favicon. |
 | `googleAnalytics`<br>`TrackingId` | string | The Google Analytics tracking identifier, to enable tracking web page traffic. | No analytics. |
-| `homePage` | file path | Path to the home page, which is shown when the application starts.  This is typically `/content-pages/home.md`.  Markdown will be converted to html.  See the [Path Specification](#path-specification) section. | Blank page. |
-| `mainMenu`<br>**required** | array | Main menu definition - see the next section. | None - must be specified. |
-| `title`<br>**required** | string | Title for the application, shown on the left side of the menu bar and is also used as the web page title shown in web browser tabs. | None - must be specified. |
-| `version`<br>**required** | string |  Version of the application configuration in format `0.2.0.dev (2020-05-05)`.  This is **not** the InfoMapper software version.  | None - must be specified. |
+| `mainMenu` | array | Main menu definition - see the next section. | None - must be specified. |
 
 ## Main Menu (`mainMenu`) Properties ##
 
@@ -93,39 +93,41 @@ Either the `menus` or `action` property should be specified.
 
 | **Property**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Type** | **Description** | **Default** |
 | -- | -- | -- | -- |
-| `id`<br>**required** | string | Internal identifier for the main menu, will be used in the URL.  See the [InfoMapper Application URL Mapping](#infomapper-application-url-mapping) section. | None - must be specified. |
-| `name`<br>**required** | string | The text displayed for the menu. | None - must be specified. |
-| `action`<br>**required** | string | The action to take when the mainMenu item is clicked.<ul><li>`contentPage` - Display a content page containing text, images, links, etc, using an internal HTML viewer</li><li>`dashboard` - Display a dashboard.</li><li>`displayMap` - Display a map.</li><li>`externalLink` - Link to another web page</li></ul><br>See below for properties based on the action. | None - must be specified. |
-| `enabled` | boolean | Whether or not the menu is enabled, `false` (or `"false"`) or `true` (or `"true"`). Disabled menus will be shown in grey and will not respond to user actions. | `true` |
-| `visible` | boolean | Whether or not the menu is visible, `false` (or `"false"`) or `true` (or `"true"`). Non-visible menus will not be shown in the menu.  This is useful for creating a placeholder in the configuration file. | `true` |
+| `id`<br>**required** | string | Unique internal identifier, to be used in the URL.  See the [InfoMapper Application URL Mapping](#infomapper-application-url-mapping) section. | None - must be specified. |
+| `name`<br>**required** | string | The text displayed for the Main Menu. | None - must be specified. |
+| `description`<br>**required** | string | A simple explanation of what this Main Menu does in the application. | None - must be specified. |
+| `action` | string | The action to take when the mainMenu item is clicked.<ul><li>`contentPage` - Display a content page containing text, images, links, etc, using an internal HTML viewer</li><li>`dashboard` - Display a dashboard.</li><li>`displayMap` - Display a map.</li><li>`externalLink` - Link to another web page</li></ul><br>See below for properties based on the action. | None. |
+| `enabled` | boolean | Whether or not the Main Menu is enabled, `false` (or `"false"`) or `true` (or `"true"`). Disabled menus will be shown in grey and will not respond to user actions. | `true` |
+| `visible` | boolean | Whether or not the Main Menu is visible, `false` (or `"false"`) or `true` (or `"true"`). Non-visible menus will not be shown in the nav bar.  This is useful for creating a placeholder in the configuration file. | `true` |
 | =========== | ====== | Properties if sub-menus. | ============ |
-| `menus` | array | Array of menus. See the next section. | |
+| `subMenus` | array | Array of SubMenus. See the next section. | No SubMenus. |
 | =========== | ====== | Properties if `action=contentPage`. | ============ |
-| `markdownFile` | file path | Used with `action` that is a `contentPage`.  Path to a Markdown file to display on a content page.  See [Path Specification](#path-specification) section. | |
+| `markdownFile` | file path | Used with `action` that is a `contentPage`.  Path to a Markdown file to display on a content page.  See [Path Specification](#path-specification) section. | None - must be specified. |
 | =========== | ====== | Properties if `action=dashboard`. | ============ |
-| `dashboardFile` | file path | Used with `action` that is a `dashboard`.  Path to a dashboard file to display as a dashboard page.  See [Path Specification](#path-specification) section. | |
+| `dashboardFile` | file path | Used with `action` that is a `dashboard`.  Path to a dashboard file to display as a dashboard page.  See [Path Specification](#path-specification) section. | None - must be specified. |
 | =========== | ====== | Properties if `action=displayMap`. | ============ |
-| `mapProject` | file path | Path to a [GeoMapProject JSON file](http://software.openwaterfoundation.org/geoprocessor/latest/doc-user/appendix-geomapproject/geomapproject/) to display.  Currently, only GeoMapProject with `projectType=SingleMap` (one map in the project) is supported.  See the [Path Specification](#path-specification) section. | |
+| `mapProject` | file path | Path to a [GeoMapProject JSON file](http://software.openwaterfoundation.org/geoprocessor/latest/doc-user/appendix-geomapproject/geomapproject/) to display.  Currently, only GeoMapProject with `projectType=SingleMap` (one map in the project) is supported.  See the [Path Specification](#path-specification) section. | None - must be specified. |
 | =========== | ====== | Properties if `action=externalLink`. | ============ |
-| `url` | URL | URL of page to link to.  A new web browser tab will be opened so that the current state of the InfoMapper is not lost.  See [Path Specification](#path-specification) section. | None. |
+| `url` | URL | URL of page to link to.  A new web browser tab will be opened so that the current state of the InfoMapper is not lost.  See [Path Specification](#path-specification) section. | None - must be specified. |
 
-## Menu (`menu`) Properties ##
+## SubMenu (`SubMenu`) Properties ##
 
-Menu properties define actions that will occur when a menu item is selected.
-Define each menu as an item in the `menus` array (see previous section).
+SubMenu properties define actions that will occur when a SubMenu item is selected.
+Define each SubMenu as an item in the `menus` array (see previous section).
 
 **<p style="text-align: center;">
-`app-config.json` Menu (`menu`) Properties
+`app-config.json` SubMenu (`SubMenu`) Properties
 </p>**
 
 | **Property**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Type** | **Description** | **Default** |
 | -- | -- | -- | -- |
-| `name`<br>**required** | string | The text displayed for the menu item. | None - must be specified. |
-| `action`<br>**required** | string | The action to take when the menu item is clicked.<ul><li>`contentPage` - Display a content page containing text, images, links, etc, using an internal HTML viewer</li><li>`dashboard` - Display a dashboard.</li><li>`displayMap` - Display a map.</li><li>`externalLink` - Link to another web page</li></ul><br>See below for properties based on the action. | None - must be specified. |
-| `enabled` | boolean | Whether or not the menu is enabled, `false` (or `"false"`) or `true` (or `"true"`) . Disabled menus will be shown in grey and will not respond to user actions. | `true` |
-| `doubleSeparatorBefore` | boolean | Whether or not double separator lines (2 lines) should be drawn above the menu item to group menu items, `false` (or `"false"`) or `true` (or `"true"`).  This is used to separate groups of menu items and single separators can be used as needed. | `false` |
-| `separatorBefore` | boolean | Whether or not a separator line should be drawn above the menu item to group menu items, `false` (or `"false"`) or `true` (or `"true"`) . | `false` |
-| `visible` | boolean | Whether or not the menu is visible, `false` (or `"false"`) or `true` (or `"true"`). Non-visible menus will not be shown in the menu.  This is useful for creating a placeholder in the configuration file. | `true` |
+| `name`<br>**required** | string | The text displayed for the SubMenu item. | None - must be specified. |
+| `description`<br>**required** | string | A simple explanation of what this SubMenu does in the application. | None - must be specified. |
+| `action` | string | The action to take when the SubMenu item is clicked.<ul><li>`contentPage` - Display a content page containing text, images, links, etc, using an internal HTML viewer</li><li>`dashboard` - Display a dashboard.</li><li>`displayMap` - Display a map.</li><li>`externalLink` - Link to another web page</li></ul><br>See below for properties based on the action. | None - must be specified. |
+| `enabled` | boolean | Whether or not the SubMenu is enabled, `false` (or `"false"`) or `true` (or `"true"`) . Disabled menus will be shown in grey and will not respond to user actions. | `true` |
+| `doubleSeparatorBefore` | boolean | Whether or not double separator lines (2 lines) should be drawn above the SubMenu item to group SubMenu items, `false` (or `"false"`) or `true` (or `"true"`).  This is used to separate groups of SubMenu items and single separators can be used as needed. | `false` |
+| `separatorBefore` | boolean | Whether or not a separator line should be drawn above the SubMenu item to group SubMenu items, `false` (or `"false"`) or `true` (or `"true"`) . | `false` |
+| `visible` | boolean | Whether or not the SubMenu is visible, `false` (or `"false"`) or `true` (or `"true"`). Non-visible menus will not be shown in the SubMenu.  This is useful for creating a placeholder in the configuration file. | `true` |
 | =========== | ====== | Properties if `action=contentPage`. | ============ |
 | `markdownFile` | file path | Used with `action` that is a `contentPage`.  Path to a Markdown file to display on a content page.  See [Path Specification](#path-specification) section. | |
 | =========== | ====== | Properties if `action=dashboard`. | ============ |
@@ -142,7 +144,8 @@ Define each menu as an item in the `menus` array (see previous section).
 | `name`<br>**required** | The unique name of the datastore being provided. Must not be one of the following built-in datastore names or their aliases:<br><ul><li>`Delimited`<ul><li>`CSV`</li></ul></li><li>`DateValue`<ul><li>`DV`</li></ul></li><li>`StateMod`<ul><li>`STM`</li></ul></li></ul> | None - must be provided. |
 | `type`<br>**required** | A string representing the type of Datastore being used. The supported datastores for the InfoMapper / Common package are as follows:<br><ul><li>`owf.datastore.delimited`</li><li>`owf.datastore.datevalue`</li><li>`owf.datastore.statemod`</li></ul> | None - must be provided. |
 | `rootUrl`<br>**required** | The root URL of the datastore. A file path from a TSID will be appended to this URL if the Datastore is provided in the TSID. More info on TSID creation can be found in the [**CDSS / TSTool / TSID** documentation](https://opencdss.state.co.us/tstool/latest/doc-user/command-ref/TSID/TSID/#overview).<br>**NOTE:** Depending on the desired resource, [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) issues may arise. If possible, try to confirm that the requested resource will be able to respond correctly if an outside request is performed. | None - must be provided. |
-| `aliases` | An array of strings representing other names that can be provided in the TSID to find this datastore. | None |
+| `aliases` | An array of strings representing other names that can be provided in the TSID to find this datastore. | None. |
+| `apiKey` | The api key for this datastore if it is required or necessary for a better consuming experience of its data. | None. |
 
 ## Path Specification ##
 
