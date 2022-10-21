@@ -32,11 +32,11 @@ Content Delivery Networks (CDNs).
 The following image illustrates an example website.
 
 **<p style="text-align: center;">
-![InfoMapper-main](images/InfoMapper-main.png)
+![InfoMapper-main](images/InfoMapper-main-4.0.2.png)
 </p>**
 
 **<p style="text-align: center;">
-InfoMapper Example Website (<a href="../images/InfoMapper-main.png">see full-size image</a>)
+InfoMapper Example Website (<a href="../images/InfoMapper-main-4.0.2.png">see full-size image</a>)
 </p>**
 
 The InfoMapper software is typically used in parallel with one or more workflow projects that

@@ -31,11 +31,11 @@ The following illustrates a hover popup.
 Create an event configuration file to constrain the number of features displayed in the popup dialog.
 
 **<p style="text-align: center;">
-![hover-popup](images/hover-popup.png)
+![hover-popup](images/IM-hover-popup-4.0.2.png)
 </p>**
 
 **<p style="text-align: center;">
-Example Popup for Hover Event (<a href="../images/hover-popup.png">see full-size image</a>)
+Example Popup for Hover Event (<a href="../images/IM-hover-popup-4.0.2.png">see full-size image</a>)
 </p>**
 
 The following illustrates the GeoMapProject data for a GeoLayerView.

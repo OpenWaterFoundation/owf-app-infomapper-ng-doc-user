@@ -47,11 +47,11 @@ The InfoMapper is a web application and is therefore constrained by the function
 The following illustrates a typical application.
 
 **<p style="text-align: center;">
-![InfoMapper-main](images/InfoMapper-main.png)
+![InfoMapper-main](images/InfoMapper-main-4.0.2.png)
 </p>**
 
 **<p style="text-align: center;">
-InfoMapper User Interface Example (<a href="../images/InfoMapper-main.png">see full-size image</a>)
+InfoMapper User Interface Example (<a href="../images/InfoMapper-main-4.0.2.png">see full-size image</a>)
 </p>**
 
 The following summarizes UI features:

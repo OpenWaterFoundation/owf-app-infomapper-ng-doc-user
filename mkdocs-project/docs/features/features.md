@@ -8,11 +8,11 @@ The InfoMapper application provides access to maps, narrative content pages, lin
 and other content.
 
 **<p style="text-align: center;">
-![InfoMapper-main](images/InfoMapper-main.png)
+![InfoMapper-main](images/InfoMapper-ditches-4.0.2.png)
 </p>**
 
 **<p style="text-align: center;">
-InfoMapper Main Interface (<a href="../images/InfoMapper-main.png">see full-size image</a>)
+InfoMapper Main Interface (<a href="../images/InfoMapper-ditches-4.0.2.png">see full-size image</a>)
 </p>**
 
 ## Browser Interactions ##
@@ -60,11 +60,11 @@ The InfoMapper provides menus to access maps, external pages, and other informat
 Menus are organized into top-level menus and sub-menus.
 
 **<p style="text-align: center;">
-![menus](images/menus.png)
+![menus](images/IM-menus-4.0.2.png)
 </p>**
 
 **<p style="text-align: center;">
-Menu to Access Information Products (<a href="../images/menus.png">see full-size image</a>)
+Menu to Access Information Products (<a href="../images/IM-menus-4.0.2.png">see full-size image</a>)
 </p>**
 
 An InfoMapper implementation will typically use an application configuration that organizes
@@ -160,11 +160,11 @@ The text in the legend panel title areas can also be clicked to compress and exp
 The legend area also provides controls to hide/show layers and hide/show layer descriptions.
 
 **<p style="text-align: center;">
-![map-legend](images/map-legend.png)
+![map-legend](images/map-legend-4.0.2.png)
 </p>**
 
 **<p style="text-align: center;">
-InfoMapper Map Legend (<a href="../images/map-legend.png">see full-size image</a>)
+InfoMapper Map Legend (<a href="../images/map-legend-4.0.2.png">see full-size image</a>)
 </p>**
 
 The legend panel lists layer groups and layers within each group.
