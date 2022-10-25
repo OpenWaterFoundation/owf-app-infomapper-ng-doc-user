@@ -93,7 +93,7 @@ Either the `menus` or `action` property should be specified.
 
 | **Property**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Type** | **Description** | **Default** |
 | -- | -- | -- | -- |
-| `id`<br>**required** | string | Unique internal identifier, to be used in the URL.  See the [InfoMapper Application URL Mapping](#infomapper-application-url-mapping) section. | None - must be specified. |
+| `id`<br>**required** | string | Unique internal identifier, to be used in the URL. See the [InfoMapper Application URL Mapping](#infomapper-application-url-mapping) section. | None - must be specified. |
 | `name`<br>**required** | string | The text displayed for the Main Menu. | None - must be specified. |
 | `description`<br>**required** | string | A simple explanation of what this Main Menu does in the application. | None - must be specified. |
 | `action` | string | The action to take when the mainMenu item is clicked.<ul><li>`contentPage` - Display a content page containing text, images, links, etc, using an internal HTML viewer</li><li>`dashboard` - Display a dashboard.</li><li>`displayMap` - Display a map.</li><li>`externalLink` - Link to another web page</li><li>`story` - Displays a Story using [Fullpage.js](https://alvarotrigo.com/fullPage/).</li></ul><br>See below for properties based on the action. | None. |
@@ -123,12 +123,14 @@ Define each SubMenu as an item in the `menus` array (see previous section).
 
 | **Property**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Type** | **Description** | **Default** |
 | -- | -- | -- | -- |
+| `id`<br>**required** | string | A unique string to identify this SubMenu and display in the page URL. See the [InfoMapper Application URL Mapping](#infomapper-application-url-mapping) section. | None - must be specified. |
 | `name`<br>**required** | string | The text displayed for the SubMenu item. | None - must be specified. |
 | `description`<br>**required** | string | A simple explanation of what this SubMenu does in the application. | None - must be specified. |
 | `action` | string | The action to take when the SubMenu item is clicked.<ul><li>`contentPage` - Display a content page containing text, images, links, etc, using an internal HTML viewer</li><li>`dashboard` - Display a dashboard.</li><li>`displayMap` - Display a map.</li><li>`externalLink` - Link to another web page</li><li>`story` - Displays a Story using [Fullpage.js](https://alvarotrigo.com/fullPage/).</li></ul><br>See below for properties based on the action. | None - must be specified. |
 | `enabled` | boolean | Whether or not the SubMenu is enabled, `false` (or `"false"`) or `true` (or `"true"`) . Disabled menus will be shown in grey and will not respond to user actions. | `true` |
 | `doubleSeparatorBefore` | boolean | Whether or not double separator lines (2 lines) should be drawn above the SubMenu item to group SubMenu items, `false` (or `"false"`) or `true` (or `"true"`).  This is used to separate groups of SubMenu items and single separators can be used as needed. | `false` |
 | `separatorBefore` | boolean | Whether or not a separator line should be drawn above the SubMenu item to group SubMenu items, `false` (or `"false"`) or `true` (or `"true"`) . | `false` |
+| `tooltip` | string | A tooltip to be shown on the right hand side of this SubMenu when a user hovers over it. | None. |
 | `visible` | boolean | Whether or not the SubMenu is visible, `false` (or `"false"`) or `true` (or `"true"`). Non-visible menus will not be shown in the SubMenu.  This is useful for creating a placeholder in the configuration file. | `true` |
 | =========== | ====== | Properties if `action=contentPage`. | ============ |
 | `markdownFile` | file path | Used with `action` that is a `contentPage`.  Path to a Markdown file to display on a content page.  See [Path Specification](#path-specification) section. | None - must be specified. |
