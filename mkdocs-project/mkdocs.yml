@@ -1,6 +1,6 @@
 # This is the main configuration file for the MkDocs website.
 # Use hash-comments to comment out pages have not been written
-# Reference: http://www.mkdocs.org/user-guide/configuration/
+# Reference: https://www.mkdocs.org/user-guide/configuration/
 #
 site_name: InfoMapper
 nav:
@@ -16,6 +16,12 @@ nav:
   - Gapminder: viz/gapminder.md
 - Resources: resources/resources.md
 - Troubleshooting: troubleshooting/troubleshooting.md
+- Appendix - Install and Config:
+  - Overview: appendix-install/overview.md
+  - app-config.json: appendix-install/app-config.md
+  - Map Event Configuration File: appendix-install/map-event-config-file.md
+  - Classification File: appendix-install/classification-file.md
+  - Time Series Configuration File: appendix-install/time-series-config-file.md
 - Appendix - Dashboard:
   - Adding a Dashboard: appendix-adding-a-dashboard/add-dashboard.md
   - Chart Widget: appendix-adding-a-dashboard/widget-chart.md
@@ -27,18 +33,14 @@ nav:
   - Text Widget: appendix-adding-a-dashboard/widget-text.md
   - Title Widget: appendix-adding-a-dashboard/widget-title.md
   - Troubleshooting: appendix-adding-a-dashboard/troubleshooting.md
-- Appendix - Story:
-  - Adding a Story: appendix-adding-a-story/add-story.md
 - Appendix - Data Formats:
   - Data Formatting: appendix-adding-a-dashboard/dataFormat.md
   - CSV: appendix-data-formats/csv.md
   - JSON: appendix-data-formats/json.md
-- Appendix - Install and Config:
-  - Overview: appendix-install/overview.md
-  - app-config.json: appendix-install/app-config.md
-  - Map Event Configuration File: appendix-install/map-event-config-file.md
-  - Classification File: appendix-install/classification-file.md
-  - Time Series Configuration File: appendix-install/time-series-config-file.md
+- Appendix - Search:
+  - Overview: appendix-search/overview.md
+- Appendix - Story:
+  - Adding a Story: appendix-adding-a-story/add-story.md
 - Appendix - Release Notes:
   - Release Notes: appendix-release-notes/release-notes.md
   - Version 0: appendix-release-notes/release-notes-0.md

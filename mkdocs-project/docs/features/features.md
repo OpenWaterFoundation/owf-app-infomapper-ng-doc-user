@@ -28,19 +28,19 @@ Because the InfoMapper is a single page application,
 the main URL causes the application to load,
 and variations on the URL cause different content within the application to be shown.
 For example, the following URL illustrates the main application URL
-(`http://poudre.openwaterfoundation.org/latest/`) and
+(`https://poudre.openwaterfoundation.org/latest/`) and
 a page that is handled by internal application routing (`/map/entities-ditches`):
 
 ```
-http://poudre.openwaterfoundation.org/latest/#/map/entities-ditches
+https://poudre.openwaterfoundation.org/latest/#/map/entities-ditches
 ```
 
 The special hash character in the URL (`#`) is used by the application to
 separate the main URL from content within the application.
 Loading the application using the application URL
-(`http://poudre.openwaterfoundation.org/latest/`) will display the home page.
+(`https://poudre.openwaterfoundation.org/latest/`) will display the home page.
 Loading the application using a more detailed URL
-(e.g., `http://poudre.openwaterfoundation.org/latest/#/map/entities-ditches`) will
+(e.g., `https://poudre.openwaterfoundation.org/latest/#/map/entities-ditches`) will
 load the application and then display the specific content corresponding to the URL.
 
 The web browser and InfoMapper features are integrated as follows.
@@ -200,4 +200,4 @@ Icons for tools are provided on the left side of the map legend.  **These featur
 ## Content Pages ##
 
 Content pages are shown if a menu action is configured to display a content page.
-The page shows text and links, similar to typical web page.
+The page shows text and links, similar to typical web pages.

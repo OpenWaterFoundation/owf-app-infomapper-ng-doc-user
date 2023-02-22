@@ -1,12 +1,12 @@
 # owf-app-infomapper-ng-doc-user #
 
-This repository contains the [Open Water Foundation (OWF)](http://openwaterfoundation.org/) InfoMapper software user documentation.
+This repository contains the [Open Water Foundation (OWF)](https://openwaterfoundation.org/) InfoMapper software user documentation.
 The documentation is written for the layperson in order to encourage use of the InfoMapper.
 See the following resources:
 
 * [InfoMapper GitHub repository](https://github.com/OpenWaterFoundation/owf-app-infomapper-ng)
-* Published latest [InfoMapper User Documentation](http://software.openwaterfoundation.org/infomapper/latest/doc-user/).
-* Published latest [InfoMapper Developer Documentation](http://software.openwaterfoundation.org/infomapper/latest/doc-dev/).
+* Published latest [InfoMapper User Documentation](https://software.openwaterfoundation.org/infomapper/latest/doc-user/).
+* Published latest [InfoMapper Developer Documentation](https://software.openwaterfoundation.org/infomapper/latest/doc-dev/).
 * InfoMapper download page - currently must clone the
 [InfoMapper](https://github.com/OpenWaterFoundation/owf-app-infomapper-ng) repository
 
@@ -50,7 +50,7 @@ owf-app-infomapper-ng-doc-user/  Repository folder.
 
 The development environment for contributing to this project requires installation of Python, MkDocs, and Material MkDocs theme.
 Python 3 is used for development.
-See the [OWF / Learn MkDocs](http://learn.openwaterfoundation.org/owf-learn-mkdocs/)
+See the [OWF / Learn MkDocs](https://learn.openwaterfoundation.org/owf-learn-mkdocs/)
 documentation for information about installing these tools.
 
 The development environment will change as the developers upgrade to newer versions of software tools.
@@ -60,7 +60,7 @@ The development environment will change as the developers upgrade to newer versi
 If the development environment is properly configured, edit and view content as follows:
 
 1. Run the `build-util/run-mkdocs-serve-8000.sh` script (Linux) or equivalent.
-2. View content in a web browser using URL `http://localhost:8000`.
+2. View content in a web browser using URL `localhost:8000`.
 3. Edit content in the `mkdocs-project/docs` folder and update `mkdocs-project/mkdocs.yml` as appropriate.
 	* Changes to the documentation files should cause the webpage to reload automatically.
 	If necessary, refresh the web browser page.
@@ -101,9 +101,9 @@ Contribute to the documentation as follows:
 
 ## Maintainers ##
 
-This repository is maintained by the [Open Water Foundation](http://openwaterfoundation.org/).
+This repository is maintained by the [Open Water Foundation](https://openwaterfoundation.org/).
 
 ## Release Notes ##
 
-Release notes for the software are included in [user documentation](http://software.openwaterfoundation.org/infomapper/latest/doc-user/appendix-release-notes/release-notes/).
+Release notes for the software are included in [user documentation](https://software.openwaterfoundation.org/infomapper/latest/doc-user/appendix-release-notes/release-notes/).
 

@@ -106,7 +106,7 @@ Either the `menus` or `action` property should be specified.
 | =========== | ====== | Properties if `action=dashboard`. | ============ |
 | `dashboardFile` | file path | Path to a dashboard file to display as a dashboard page.  See [Path Specification](#path-specification) section. | None - must be specified. |
 | =========== | ====== | Properties if `action=displayMap`. | ============ |
-| `mapProject` | file path | Path to a [GeoMapProject JSON file](http://software.openwaterfoundation.org/geoprocessor/latest/doc-user/appendix-geomapproject/geomapproject/) to display.  Currently, only GeoMapProject with `projectType=SingleMap` (one map in the project) is supported. See the [Path Specification](#path-specification) section. | None - must be specified. |
+| `mapProject` | file path | Path to a [GeoMapProject JSON file](https://software.openwaterfoundation.org/geoprocessor/latest/doc-user/appendix-geomapproject/geomapproject/) to display.  Currently, only GeoMapProject with `projectType=SingleMap` (one map in the project) is supported. See the [Path Specification](#path-specification) section. | None - must be specified. |
 | =========== | ====== | Properties if `action=story`. | ============ |
 | `storyFile` | file path | Path to a story configuration file to be used to create a Story page. See the [Path Specification](#path-specification) section. | None - must be specified. |
 | =========== | ====== | Properties if `action=externalLink`. | ============ |
@@ -137,7 +137,7 @@ Define each SubMenu as an item in the `menus` array (see previous section).
 | =========== | ====== | Properties if `action=dashboard`. | ============ |
 | `dashboardFile` | file path | Used with `action` that is a `dashboard`.  Path to a dashboard file to display as a dashboard page.  See [Path Specification](#path-specification) section. | None - must be specified. |
 | =========== | ====== | Properties if `action=displayMap`. | ============ |
-| `mapProject` | file path | Path to a [GeoMapProject JSON file](http://software.openwaterfoundation.org/geoprocessor/latest/doc-user/appendix-geomapproject/geomapproject/) to display.  Currently, only GeoMapProject with `projectType=SingleMap` (one map in the project) is supported.  See the [Path Specification](#path-specification) section. | None - must be specified. |
+| `mapProject` | file path | Path to a [GeoMapProject JSON file](https://software.openwaterfoundation.org/geoprocessor/latest/doc-user/appendix-geomapproject/geomapproject/) to display.  Currently, only GeoMapProject with `projectType=SingleMap` (one map in the project) is supported.  See the [Path Specification](#path-specification) section. | None - must be specified. |
 | =========== | ====== | Properties if `action=story`. | ============ |
 | `storyFile` | file path | Path to a story configuration file to be used to create a Story page. See the [Path Specification](#path-specification) section. | None - must be specified. |
 | =========== | ====== | Properties if `action=externalLink`. | ============ |
@@ -260,9 +260,9 @@ InfoMapper Application URL Mapping
 
 | **InfoMapper URL**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Descripton** |
 | -- | -- |
-| `http://someserver/someapp/` | Load the application and display the home page. |
-| `http://someserver/someapp/#/` | Load the application and display the home page. |
-| `http://someserver/someapp/#/`<br>`map/current-streamflow` | Display a map with menu `id` property value `current-streamflow`.  All menu items with `action` of `displayMap` are listed under `map/` in the InfoMapper URL. |
-| `http://someserver/someapp/#/`<br>`map/current-streamflow?`<br>`parameters` | Same as above, with additional parameters to configure the map display. |
-| `http://someserver/someapp/#/`<br>`content-page/home` | Display a content page for application property `homePage`. |
-| `http://someserver/someapp/#/`<br>`content-page/about` | Display a content page with menu `id` property value `about`.  All menu items with `action` of `contentPage` are listed under `content-page/` in the InfoMapper URL. 
+| `https://someserver/someapp/` | Load the application and display the home page. |
+| `https://someserver/someapp/#/` | Load the application and display the home page. |
+| `https://someserver/someapp/#/`<br>`map/current-streamflow` | Display a map with menu `id` property value `current-streamflow`.  All menu items with `action` of `displayMap` are listed under `map/` in the InfoMapper URL. |
+| `https://someserver/someapp/#/`<br>`map/current-streamflow?`<br>`parameters` | Same as above, with additional parameters to configure the map display. |
+| `https://someserver/someapp/#/`<br>`content-page/home` | Display a content page for application property `homePage`. |
+| `https://someserver/someapp/#/`<br>`content-page/about` | Display a content page with menu `id` property value `about`.  All menu items with `action` of `contentPage` are listed under `content-page/` in the InfoMapper URL. 
