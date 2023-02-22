@@ -102,9 +102,9 @@ Either the `menus` or `action` property should be specified.
 | =========== | ====== | Properties if sub-menus. | ============ |
 | `subMenus` | array | Array of SubMenus. See the next section. | No SubMenus. |
 | =========== | ====== | Properties if `action=contentPage`. | ============ |
-| `markdownFile` | file path | Path to a Markdown file to display on a content page.  See [Path Specification](#path-specification) section. | None - must be specified. |
+| `markdownFile` | file path | Path to a Markdown file to display on a content page. See [Path Specification](#path-specification) section. | None - must be specified. |
 | =========== | ====== | Properties if `action=dashboard`. | ============ |
-| `dashboardFile` | file path | Path to a dashboard file to display as a dashboard page.  See [Path Specification](#path-specification) section. | None - must be specified. |
+| `dashboardFile` | file path | Path to a dashboard file to display as a dashboard page. See [Path Specification](#path-specification) section. More information on the creation of dashboard files can be found at [Appendix - Dashboard](../appendix-adding-a-dashboard/add-dashboard.md) | None - must be specified. |
 | =========== | ====== | Properties if `action=displayMap`. | ============ |
 | `mapProject` | file path | Path to a [GeoMapProject JSON file](https://software.openwaterfoundation.org/geoprocessor/latest/doc-user/appendix-geomapproject/geomapproject/) to display.  Currently, only GeoMapProject with `projectType=SingleMap` (one map in the project) is supported. See the [Path Specification](#path-specification) section. | None - must be specified. |
 | =========== | ====== | Properties if `action=story`. | ============ |
@@ -135,7 +135,7 @@ Define each SubMenu as an item in the `menus` array (see previous section).
 | =========== | ====== | Properties if `action=contentPage`. | ============ |
 | `markdownFile` | file path | Used with `action` that is a `contentPage`.  Path to a Markdown file to display on a content page.  See [Path Specification](#path-specification) section. | None - must be specified. |
 | =========== | ====== | Properties if `action=dashboard`. | ============ |
-| `dashboardFile` | file path | Used with `action` that is a `dashboard`.  Path to a dashboard file to display as a dashboard page.  See [Path Specification](#path-specification) section. | None - must be specified. |
+| `dashboardFile` | file path | Used with `action` that is a `dashboard`.  Path to a dashboard file to display as a dashboard page. See [Path Specification](#path-specification) section. More information on the creation of dashboard files can be found at [Appendix - Dashboard](../appendix-adding-a-dashboard/add-dashboard.md) | None - must be specified. |
 | =========== | ====== | Properties if `action=displayMap`. | ============ |
 | `mapProject` | file path | Path to a [GeoMapProject JSON file](https://software.openwaterfoundation.org/geoprocessor/latest/doc-user/appendix-geomapproject/geomapproject/) to display.  Currently, only GeoMapProject with `projectType=SingleMap` (one map in the project) is supported.  See the [Path Specification](#path-specification) section. | None - must be specified. |
 | =========== | ====== | Properties if `action=story`. | ============ |
