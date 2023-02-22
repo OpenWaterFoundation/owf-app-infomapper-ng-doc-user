@@ -17,7 +17,7 @@ checkMkdocsVersion() {
     mkdocsVersionFull=$(mkdocs --version)
     # Check if the last command worked, and if not, try `python3 -m mkdocs --version`.
     if [ "$?" = "1" ]; then
-      mkdocsVersionFull=$(python3 -m mkdocs --version)
+      mkdocsVersionFull=$(py -m mkdocs --version)
     fi
   elif [ "${operatingSystem}" = "mingw" ]; then
     mkdocsVersionFull=$(py -m mkdocs --version)
