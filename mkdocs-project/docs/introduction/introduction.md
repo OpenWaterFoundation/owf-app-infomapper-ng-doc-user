@@ -74,7 +74,7 @@ The following are concepts that are used throughout the InfoMapper and this docu
 The InfoMapper relies heavily on map configurations to describe map products.
 Typical GIS software map configurations, such as those used with QGIS and ArcGIS, are complicated,
 files may be very large, and can be difficult to automate.
-The InfoMapper uses [GeoMapProject](http://software.openwaterfoundation.org/geoprocessor/latest/doc-user/appendix-geomapproject/geomapproject/)
+The InfoMapper uses [GeoMapProject](https://software.openwaterfoundation.org/geoprocessor/latest/doc-user/appendix-geomapproject/geomapproject/)
 files created by OWF GeoProcessor software to describe maps.
 These map configurations are JSON files that describe project type,
 map, layers, groups of layers, and symbols for layers.
@@ -89,7 +89,7 @@ interaction features (see next [Events](#events) section).
 ### Events ###
 
 The GeoMapProject configurations contain information to describe
-[map events](http://software.openwaterfoundation.org/geoprocessor/latest/doc-user/appendix-geomapproject/geomapproject/#geolayervieweventhandler),
+[map events](https://software.openwaterfoundation.org/geoprocessor/latest/doc-user/appendix-geomapproject/geomapproject/#geolayervieweventhandler),
 which are user interactions.
 For example, mousing over a layer feature may display a popup with information.
 Clicking on a feature may provide more detailed data and links to other information.

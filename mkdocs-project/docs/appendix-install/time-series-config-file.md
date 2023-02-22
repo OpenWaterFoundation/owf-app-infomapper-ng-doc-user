@@ -10,7 +10,7 @@
 
 A time series configuration file, also called "time series graph configuration" and "time series product" file,
 is created by TSTool by running the
-[`ProcessTSProduct(OutputProductFile="somefile.json")`](http://opencdss.state.co.us/tstool/latest/doc-user/command-ref/ProcessTSProduct/ProcessTSProduct/)
+[`ProcessTSProduct(OutputProductFile="somefile.json")`](https://opencdss.state.co.us/tstool/latest/doc-user/command-ref/ProcessTSProduct/ProcessTSProduct/)
 command.
 This file provides a verbose representation of a time series product, such as a graph,
 and allows the InfoMapper to create a corresponding graph using a charting package (by default plotly).
@@ -24,7 +24,7 @@ The following examples illustrate the use of graph configurations.
 
 ### Poudre Basin Information - County Population ###
 
-The [Poudre Basin Information website](http://poudre.openwaterfoundation.org/latest/#/map/entities-counties) 
+The [Poudre Basin Information website](https://poudre.openwaterfoundation.org/latest/#/map/entities-counties) 
 implements a graph configuration to display graphs of county
 population time series (click on a county to display population time series).
 The following illustrate the steps necessary to configure a time series graph.
@@ -42,7 +42,7 @@ and graph configuration templates that describe the graph so that it can be crea
 	[`county-population-graph-config.tsp`](https://github.com/OpenWaterFoundation/owf-infomapper-poudre/blob/master/workflow/BasinEntities/Political-Counties/graphs/county-population-graph-config.tsp).
 	The example is for Larimer county.
 	4. Automate processing the graph using the 
-	[`ProcessTSProduct(OutputProductFile="somefile.json")`](http://opencdss.state.co.us/tstool/latest/doc-user/command-ref/ProcessTSProduct/ProcessTSProduct/)
+	[`ProcessTSProduct(OutputProductFile="somefile.json")`](https://opencdss.state.co.us/tstool/latest/doc-user/command-ref/ProcessTSProduct/ProcessTSProduct/)
 	command.  This saves a "prototype" graph as JSON, using the specific time series identifiers,
 	in this case
 	[`county-population-graph-config-prototype.json`](https://github.com/OpenWaterFoundation/owf-infomapper-poudre/blob/master/workflow/BasinEntities/Political-Counties/graphs/county-population-graph-config-prototype.json).
@@ -51,7 +51,7 @@ and graph configuration templates that describe the graph so that it can be crea
 	This ensures that the product can be completely defined in InfoMapper.
 3. Convert the JSON time series product into a template.
 	1. Use the
-	[`TextEdit`](http://opencdss.state.co.us/tstool/latest/doc-user/command-ref/TextEdit/TextEdit/)
+	[`TextEdit`](https://opencdss.state.co.us/tstool/latest/doc-user/command-ref/TextEdit/TextEdit/)
 	command to replace the specific time series location identifier `Larimer` with a property
 	using notation `${featureAttribute:county}`, which causes InfoMapper to insert the value of the `county` attribute for the
 	county layer when processing the graph.

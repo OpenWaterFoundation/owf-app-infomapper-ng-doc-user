@@ -26,7 +26,7 @@ contains processing workflow to create information products.
 See the [owf-app-poudre-dashboard-workflow](https://github.com/OpenWaterFoundation/owf-app-poudre-dashboard-workflow)
 repository for an example that provides a specific configuration and data files to the InfoMapper.
 See also the deployed
-[Poudre Basin Information](http://poudre.openwaterfoundation.org/latest/) website.
+[Poudre Basin Information](https://poudre.openwaterfoundation.org/latest/) website.
 
 ## File Organization Strategies ##
 
@@ -57,7 +57,7 @@ and shared files, with appropriate paths being used in configuration files.
 
 The following is a typical InfoMapper organization using map-centric organization,
 using an example from the
-[Poudre Basin Information](http://poudre.openwaterfoundation.org/latest/) implementation.
+[Poudre Basin Information](https://poudre.openwaterfoundation.org/latest/) implementation.
 In this case, the majority of map data and configuration files are in folders for
 the map, with only a few map-related files such as map marker images
 being located in the global `img/` folder.

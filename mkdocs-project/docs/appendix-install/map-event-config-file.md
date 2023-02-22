@@ -17,7 +17,7 @@ This allows interaction with map layers,
 such as hovering over features or clicking on features in order to view additional information.
 
 One or more event handlers can be added to a GeoMapProject using the GeoView
-[`SetGeoLayerViewEventHandler`](http://software.openwaterfoundation.org/geoprocessor/latest/doc-user/command-ref/SetGeoLayerViewEventHandler/SetGeoLayerViewEventHandler/) command.
+[`SetGeoLayerViewEventHandler`](https://software.openwaterfoundation.org/geoprocessor/latest/doc-user/command-ref/SetGeoLayerViewEventHandler/SetGeoLayerViewEventHandler/) command.
 Default event handlers are often sufficient for many layers, especially when additional interaction is not needed.
 
 ## Hover Event ##
@@ -92,7 +92,7 @@ A click event is enabled by default and will show all feature attributes in a sc
 Attributes that are URLs are enabled as links because the popup dialog will remain and the mouse can be moved over the link.
 Create an event configuration file to constrain the number of features displayed in the popup dialog.
 An event handler can be defined in map configuration file using GeoProcessor
-[`SetGeoLayerViewEventHandler`](http://software.openwaterfoundation.org/geoprocessor/latest/doc-user/command-ref/SetGeoLayerViewEventHandler/SetGeoLayerViewEventHandler/)
+[`SetGeoLayerViewEventHandler`](https://software.openwaterfoundation.org/geoprocessor/latest/doc-user/command-ref/SetGeoLayerViewEventHandler/SetGeoLayerViewEventHandler/)
 command, for example:
 
 ```
